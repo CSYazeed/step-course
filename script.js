@@ -495,6 +495,15 @@ if (localStorage.getItem("theme") === "dark") {
   document.body.classList.add("dark");
 }
 
+// TEMPORARY: Skip the login screen while developing the website. REMOVE LATER
+accessScreen.classList.add("hidden");
+
+// TEMPORARY: Show the main website immediately. REMOVE LATER
+mainWebsite.classList.remove("hidden");
+
+// TEMPORARY: Load the courses immediately. REMOVE LATER
+renderCourses(); 
+
 
 // ============================================================
 // CLOSE MODAL

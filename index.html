@@ -40,7 +40,7 @@
 <!-- This line starts the content-consent checkbox row. -->
 <input id="consentCheck" type="checkbox">
 <!-- This line creates the checkbox the student must select. -->
-<span>أتعهد بعدم مشاركة أو تسريب أو إعادة نشر أي من محتويات الدورة التي سأتمكن من الوصول إليها.</span>
+<span>أتعهد بعدم مشاركة أو تسريب أو إعادة نشر أي من محتويات الدورة التي سأتمكن من الوصول إليها</span>
 <!-- This line displays the consent statement. -->
 </label>
 <!-- This line ends the consent row. -->
@@ -58,7 +58,7 @@
 <!-- This line creates the sticky website header. -->
 <div class="small-brand">
 <!-- This line creates the compact brand area. -->
-<div class="brand-mark">YE</div>
+<div class="brand-mark">YZ</div>
 <!-- This line displays the compact logo mark. -->
 <strong>Yazeed English</strong>
 <!-- This line displays the compact brand name. -->
@@ -80,9 +80,9 @@
 <!-- This line starts the hero section. -->
 <div class="eyebrow">YAZEED ENGLISH • STEP COURSE</div>
 <!-- This line displays a small brand label above the main title. -->
-<h2>طوّر لغتك واستعد لاختبار STEP</h2>
+<h2>دورة ستيب | يزيد انقلش</h2>
 <!-- This line displays the main course heading. -->
-<p>دروس مرتبة بطريقة بسيطة تساعدك على فهم القواعد والمفردات والمهارات المطلوبة في اختبار STEP، مع إمكانية مشاهدة كل درس داخل مشغل فيديو احترافي.</p>
+<p>دورة تعليمية متكاملة لاختبار STEP ، صُممت لتساعدك على الاستعداد للاختبار بطريقة واضحة ومنظمة
 <!-- This line displays the main course description. -->
 </section>
 <!-- This line ends the hero section. -->
@@ -92,7 +92,7 @@
 <!-- This line creates the courses heading row. -->
 <div>
 <!-- This line groups the heading and subtitle. -->
-<h3>الدروس والدورات</h3>
+<h3>دروس القواعد</h3>
 <!-- This line displays the courses heading. -->
 <span>اختر الدرس الذي تريد البدء به</span>
 <!-- This line displays a short instruction. -->
@@ -123,8 +123,13 @@
 </div>
 <!-- This line ends the player header. -->
 <div class="video-shell">
-<!-- This line creates the video area. -->
-<video id="courseVideo" preload="metadata"></video>
+<!-- This line creates the video area and prevents the browser's download button. -->
+<video
+    id="courseVideo"
+    preload="metadata"
+    controlsList="nodownload"
+    disablePictureInPicture
+></video>
 <!-- This line creates the HTML5 video element used by the custom player. -->
 <div id="videoPlaceholder" class="video-placeholder">
 <!-- This line creates the message shown when a course has no video file yet. -->
@@ -132,7 +137,7 @@
 <!-- This line groups the placeholder text. -->
 <strong>الفيديو جاهز للربط</strong>
 <!-- This line tells you that the player is ready. -->
-<span>ضع رابط أو ملف الفيديو داخل بيانات الدورة في JavaScript.</span>
+<span>ضع رابط أو ملف الفيديو داخل بيانات الدورة في JavaScript</span>
 <!-- This line explains where you will add the actual video later. -->
 </div>
 <!-- This line ends the placeholder text group. -->

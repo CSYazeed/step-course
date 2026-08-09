@@ -14,6 +14,8 @@
   --amber: #00689b;
   /* This variable controls the accent color. */
   --line: #DCDFD6;
+  /* this variable controls course buttons to watch */
+  --course-button: #00689b;
   /* This variable controls borders and separators. */
   --card: #FFFFFF;
   /* This variable controls card backgrounds. */
@@ -562,7 +564,7 @@ button {
   /* This line gives the button comfortable spacing. */
   border-radius: 13px;
   /* This line rounds the button corners. */
-  background: var(--ink);
+  background: var(--course-button);
   /* This line gives the button a dark theme-aware color. */
   color: var(--card);
   /* This line gives the button readable contrasting text. */
