@@ -17,14 +17,14 @@ const COURSES = [
         description:
             "شرح قاعدة المضارع البسيط واستخداماته الأساسية مع أمثلة تساعدك على فهم أسئلة STEP.",
         video:
-            "grammar.mp4"
+            "videos/grammar.mp4"
     },
 
     {
         title: "Present Continuous",
         description:
             "تعلم استخدام المضارع المستمر وكيفية تمييزه في الجمل والأسئلة.",
-        video: "videos/present-continuous.mp4"
+        video: "videos/grammar2.mp4"
     },
 
     {
