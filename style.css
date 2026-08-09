@@ -192,6 +192,8 @@ body {
 
     /* Small font. */
     font-size: 11px;
+    margin-left: 8%;
+    text-align: center;
 
     /* Soft color. */
     color: var(--ink-soft);
@@ -722,7 +724,7 @@ body {
 
     /* Heavy. */
     font-weight: 900;
-    text-align: ;
+    text-align: left;
 
     /* Spacing. */
     margin-bottom: 12px;

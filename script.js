@@ -1064,32 +1064,133 @@ speedSelect.addEventListener(
 // FULLSCREEN
 // ============================================================
 
-// Fullscreen button.
+// ============================================================
+// FULLSCREEN
+// ============================================================
+
+// ============================================================
+// FULLSCREEN
+// ============================================================
+
+// This controls the fullscreen button.
 fullscreenBtn.addEventListener(
     "click",
     async () => {
 
-        // Try fullscreen.
-        try {
+        // Try the standard fullscreen method first.
+        if (courseVideo.requestFullscreen) {
 
-            // Use browser fullscreen.
-            if (
-                courseVideo.requestFullscreen
-            ) {
+            try {
 
+                // Open the video in fullscreen.
                 await courseVideo.requestFullscreen();
+
+                return;
+
+            } catch (error) {
+
+                // Continue to the next method if this fails.
+                console.log(
+                    "Standard fullscreen failed.",
+                    error
+                );
 
             }
 
-        } catch (error) {
+        }
 
-            // Show error in console.
-            console.log(
-                "Fullscreen unavailable.",
-                error
-            );
+        // iPhone and iPad Safari use this method.
+        if (courseVideo.webkitEnterFullscreen) {
+
+            try {
+
+                // Open Apple's native video fullscreen player.
+                courseVideo.webkitEnterFullscreen();
+
+                return;
+
+            } catch (error) {
+
+                // Continue if this method also fails.
+                console.log(
+                    "iOS fullscreen failed.",
+                    error
+                );
+
+            }
 
         }
+
+        // Some older browsers use this method.
+        if (courseVideo.webkitRequestFullscreen) {
+
+            try {
+
+                // Try the older WebKit fullscreen method.
+                await courseVideo.webkitRequestFullscreen();
+
+                return;
+
+            } catch (error) {
+
+                // Continue if this method fails.
+                console.log(
+                    "WebKit fullscreen failed.",
+                    error
+                );
+
+            }
+
+        }
+
+        // Some older Firefox versions use this method.
+        if (courseVideo.mozRequestFullScreen) {
+
+            try {
+
+                // Try Firefox's older fullscreen method.
+                await courseVideo.mozRequestFullScreen();
+
+                return;
+
+            } catch (error) {
+
+                // Continue if this method fails.
+                console.log(
+                    "Firefox fullscreen failed.",
+                    error
+                );
+
+            }
+
+        }
+
+        // Some older Microsoft browsers use this method.
+        if (courseVideo.msRequestFullscreen) {
+
+            try {
+
+                // Try Microsoft's older fullscreen method.
+                await courseVideo.msRequestFullscreen();
+
+                return;
+
+            } catch (error) {
+
+                // Continue if this method fails.
+                console.log(
+                    "Microsoft fullscreen failed.",
+                    error
+                );
+
+            }
+
+        }
+
+        // Tell the user if no fullscreen method is available.
+        alert(
+            "ملء الشاشة غير متاح على هذا الجهاز أو المتصفح."
+        );
 
     }
 );
