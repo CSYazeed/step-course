@@ -10,18 +10,16 @@ const DEVELOPMENT_MODE = true;
 // GRAMMAR COURSES
 // ============================================================
 
-// This array contains all grammar courses.
 const COURSES = [
 
-    // Course 1.
     {
         title: "Present Simple",
         description:
             "شرح قاعدة المضارع البسيط واستخداماته الأساسية مع أمثلة تساعدك على فهم أسئلة STEP.",
-        video: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+        video:
+            "grammar.mp4"
     },
 
-    // Course 2.
     {
         title: "Present Continuous",
         description:
@@ -29,7 +27,6 @@ const COURSES = [
         video: "videos/present-continuous.mp4"
     },
 
-    // Course 3.
     {
         title: "Past Simple",
         description:
@@ -37,7 +34,6 @@ const COURSES = [
         video: "videos/past-simple.mp4"
     },
 
-    // Course 4.
     {
         title: "Future",
         description:
@@ -45,7 +41,6 @@ const COURSES = [
         video: "videos/future.mp4"
     },
 
-    // Course 5.
     {
         title: "Comparatives",
         description:
@@ -53,7 +48,6 @@ const COURSES = [
         video: "videos/comparatives.mp4"
     },
 
-    // Course 6.
     {
         title: "Superlatives",
         description:
@@ -61,7 +55,6 @@ const COURSES = [
         video: "videos/superlatives.mp4"
     },
 
-    // Course 7.
     {
         title: "Modal Verbs",
         description:
@@ -69,7 +62,6 @@ const COURSES = [
         video: "videos/modal-verbs.mp4"
     },
 
-    // Course 8.
     {
         title: "Vocabulary",
         description:
@@ -77,7 +69,6 @@ const COURSES = [
         video: "videos/vocabulary.mp4"
     },
 
-    // Course 9.
     {
         title: "Reading Skills",
         description:
@@ -85,7 +76,6 @@ const COURSES = [
         video: "videos/reading-skills.mp4"
     },
 
-    // Course 10.
     {
         title: "Listening Skills",
         description:
@@ -100,67 +90,86 @@ const COURSES = [
 // READING QUESTIONS
 // ============================================================
 
-// This array contains 10 reading questions.
 const READING_QUESTIONS = [
 
     {
         number: 1,
         title: "Reading Question 01",
-        description: "اقرأ القطعة ثم اختر الإجابة الصحيحة."
+        description: "اقرأ القطعة ثم اختر الإجابة الصحيحة.",
+        video:
+            "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
     },
 
     {
         number: 2,
         title: "Reading Question 02",
-        description: "حدد الفكرة الرئيسية للقطعة."
+        description: "حدد الفكرة الرئيسية للقطعة.",
+        video:
+            "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
     },
 
     {
         number: 3,
         title: "Reading Question 03",
-        description: "ابحث عن المعلومة المطلوبة داخل النص."
+        description: "ابحث عن المعلومة المطلوبة داخل النص.",
+        video:
+            "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
     },
 
     {
         number: 4,
         title: "Reading Question 04",
-        description: "اختر الإجابة التي يدعمها النص."
+        description: "اختر الإجابة التي يدعمها النص.",
+        video:
+            "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
     },
 
     {
         number: 5,
         title: "Reading Question 05",
-        description: "حدد معنى الكلمة من سياق النص."
+        description: "حدد معنى الكلمة من سياق النص.",
+        video:
+            "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
     },
 
     {
         number: 6,
         title: "Reading Question 06",
-        description: "حدد المعلومة الصحيحة حسب القطعة."
+        description: "حدد المعلومة الصحيحة حسب القطعة.",
+        video:
+            "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
     },
 
     {
         number: 7,
         title: "Reading Question 07",
-        description: "ابحث عن التفاصيل المهمة في النص."
+        description: "ابحث عن التفاصيل المهمة في النص.",
+        video:
+            "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
     },
 
     {
         number: 8,
         title: "Reading Question 08",
-        description: "حدد الاستنتاج الصحيح من القطعة."
+        description: "حدد الاستنتاج الصحيح من القطعة.",
+        video:
+            "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
     },
 
     {
         number: 9,
         title: "Reading Question 09",
-        description: "اختر الإجابة الأقرب لما ورد في النص."
+        description: "اختر الإجابة الأقرب لما ورد في النص.",
+        video:
+            "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
     },
 
     {
         number: 10,
         title: "Reading Question 10",
-        description: "اختر الإجابة الصحيحة بناءً على القطعة."
+        description: "اختر الإجابة الصحيحة بناءً على القطعة.",
+        video:
+            "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
     }
 
 ];
@@ -170,67 +179,86 @@ const READING_QUESTIONS = [
 // LISTENING QUESTIONS
 // ============================================================
 
-// This array contains 10 listening questions.
 const LISTENING_QUESTIONS = [
 
     {
         number: 1,
         title: "Listening Question 01",
-        description: "استمع إلى المقطع ثم اختر الإجابة الصحيحة."
+        description: "استمع إلى المقطع ثم اختر الإجابة الصحيحة.",
+        video:
+            "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
     },
 
     {
         number: 2,
         title: "Listening Question 02",
-        description: "استمع جيدًا وحدد المعلومة المطلوبة."
+        description: "استمع جيدًا وحدد المعلومة المطلوبة.",
+        video:
+            "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
     },
 
     {
         number: 3,
         title: "Listening Question 03",
-        description: "حدد الفكرة الرئيسية للمقطع."
+        description: "حدد الفكرة الرئيسية للمقطع.",
+        video:
+            "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
     },
 
     {
         number: 4,
         title: "Listening Question 04",
-        description: "استمع إلى التفاصيل واختر الإجابة الصحيحة."
+        description: "استمع إلى التفاصيل واختر الإجابة الصحيحة.",
+        video:
+            "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
     },
 
     {
         number: 5,
         title: "Listening Question 05",
-        description: "حدد ما يقوله المتحدث في المقطع."
+        description: "حدد ما يقوله المتحدث في المقطع.",
+        video:
+            "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
     },
 
     {
         number: 6,
         title: "Listening Question 06",
-        description: "استمع وحدد المعلومة الصحيحة."
+        description: "استمع وحدد المعلومة الصحيحة.",
+        video:
+            "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
     },
 
     {
         number: 7,
         title: "Listening Question 07",
-        description: "ركز على الكلمات والمعلومات المهمة."
+        description: "ركز على الكلمات والمعلومات المهمة.",
+        video:
+            "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
     },
 
     {
         number: 8,
         title: "Listening Question 08",
-        description: "حدد الاستنتاج الصحيح بعد الاستماع."
+        description: "حدد الاستنتاج الصحيح بعد الاستماع.",
+        video:
+            "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
     },
 
     {
         number: 9,
         title: "Listening Question 09",
-        description: "اختر الإجابة التي تتوافق مع المقطع."
+        description: "اختر الإجابة التي تتوافق مع المقطع.",
+        video:
+            "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
     },
 
     {
         number: 10,
         title: "Listening Question 10",
-        description: "استمع جيدًا ثم اختر الإجابة الصحيحة."
+        description: "استمع جيدًا ثم اختر الإجابة الصحيحة.",
+        video:
+            "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
     }
 
 ];
@@ -240,147 +268,116 @@ const LISTENING_QUESTIONS = [
 // GET HTML ELEMENTS
 // ============================================================
 
-// Get the login screen.
 const accessScreen =
     document.getElementById("accessScreen");
 
-// Get the main website.
 const mainWebsite =
     document.getElementById("mainWebsite");
 
-// Get the password input.
 const passwordInput =
     document.getElementById("passwordInput");
 
-// Get the consent checkbox.
 const consentCheck =
     document.getElementById("consentCheck");
 
-// Get the login button.
 const continueBtn =
     document.getElementById("continueBtn");
 
-// Get the error message.
 const accessError =
     document.getElementById("accessError");
 
-// Get the single theme toggle button.
 const themeToggle =
     document.getElementById("themeToggle");
 
-// Get grammar grid.
 const courseGrid =
     document.getElementById("courseGrid");
 
-// Get reading grid.
 const readingGrid =
     document.getElementById("readingGrid");
 
-// Get listening grid.
 const listeningGrid =
     document.getElementById("listeningGrid");
 
-// Get video modal.
 const courseModal =
     document.getElementById("courseModal");
 
-// Get close button.
 const closeModalBtn =
     document.getElementById("closeModalBtn");
 
-// Get modal title.
 const modalTitle =
     document.getElementById("modalTitle");
 
-// Get lesson title.
 const lessonTitle =
     document.getElementById("lessonTitle");
 
-// Get lesson description.
 const lessonDescription =
     document.getElementById("lessonDescription");
 
-// Get video.
 const courseVideo =
     document.getElementById("courseVideo");
 
-// Get placeholder.
 const videoPlaceholder =
     document.getElementById("videoPlaceholder");
 
-// Get play button.
 const playBtn =
     document.getElementById("playBtn");
 
-// Get progress bar.
 const progressBar =
     document.getElementById("progressBar");
 
-// Get current time.
 const currentTime =
     document.getElementById("currentTime");
 
-// Get duration.
 const durationTime =
     document.getElementById("durationTime");
 
-// Get volume.
 const volumeBar =
     document.getElementById("volumeBar");
 
-// Get speed selector.
 const speedSelect =
     document.getElementById("speedSelect");
 
-// Get fullscreen button.
 const fullscreenBtn =
     document.getElementById("fullscreenBtn");
 
-// Get previous button.
 const previousBtn =
     document.getElementById("previousBtn");
 
-// Get next button.
 const nextBtn =
     document.getElementById("nextBtn");
 
-// Get exam simulator button.
 const examSimulatorBtn =
     document.getElementById("examSimulatorBtn");
 
 
 // ============================================================
-// CURRENT COURSE
+// CURRENT LESSON / QUESTION
 // ============================================================
 
-// This remembers which grammar course is open.
 let currentCourseIndex = 0;
+
+let currentQuestionIndex = 0;
+
+let currentQuestionList = [];
+
+let currentSectionType = "";
 
 
 // ============================================================
 // CREATE GRAMMAR COURSES
 // ============================================================
 
-// This function creates the 10 grammar cards.
 function renderCourses() {
 
-    // Clear the grid.
     courseGrid.innerHTML = "";
 
-
-    // Go through every course.
     COURSES.forEach((course, index) => {
 
-        // Create a card.
         const card =
             document.createElement("article");
 
-
-        // Give it the course-card CSS class.
         card.className = "course-card";
 
-
-        // Add the card content.
         card.innerHTML = `
 
             <div class="course-number">
@@ -404,33 +401,30 @@ function renderCourses() {
 
         `;
 
-
-        // Add the card to the page.
         courseGrid.appendChild(card);
 
     });
 
-
-    // Find all course buttons.
     const buttons =
-        document.querySelectorAll(
+        courseGrid.querySelectorAll(
             "[data-course-index]"
         );
 
-
-    // Add a click event to every button.
     buttons.forEach((button) => {
 
-        button.addEventListener("click", () => {
+        button.addEventListener(
+            "click",
+            () => {
 
-            // Get the course number.
-            const index =
-                Number(button.dataset.courseIndex);
+                const index =
+                    Number(
+                        button.dataset.courseIndex
+                    );
 
-            // Open the course.
-            openCourse(index);
+                openCourse(index);
 
-        });
+            }
+        );
 
     });
 
@@ -438,37 +432,34 @@ function renderCourses() {
 
 
 // ============================================================
-// CREATE READING AND LISTENING CARDS
+// CREATE READING / LISTENING CARDS
 // ============================================================
 
-// This function creates question cards.
 function renderQuestionSection(
     questions,
-    containerId
+    containerId,
+    sectionType
 ) {
 
-    // Find the correct grid.
     const container =
         document.getElementById(containerId);
 
+    if (!container) {
+        console.error(
+            `Container not found: ${containerId}`
+        );
+        return;
+    }
 
-    // Clear the grid.
     container.innerHTML = "";
 
+    questions.forEach((question, index) => {
 
-    // Go through all questions.
-    questions.forEach((question) => {
-
-        // Create a card.
         const card =
             document.createElement("article");
 
-
-        // Give the card its CSS class.
         card.className = "course-card";
 
-
-        // Create the card content.
         card.innerHTML = `
 
             <div class="course-number">
@@ -485,43 +476,41 @@ function renderQuestionSection(
 
             <button
                 class="course-btn question-btn"
-                data-question-number="${question.number}"
+                data-question-index="${index}"
             >
-                بدء السؤال
+                مشاهدة السؤال
             </button>
 
         `;
 
-
-        // Add the card to the page.
         container.appendChild(card);
 
     });
 
-
-    // Find the question buttons.
     const questionButtons =
         container.querySelectorAll(
             ".question-btn"
         );
 
-
-    // Add click events.
     questionButtons.forEach((button) => {
 
-        button.addEventListener("click", () => {
+        button.addEventListener(
+            "click",
+            () => {
 
-            // Get the question number.
-            const questionNumber =
-                button.dataset.questionNumber;
+                const index =
+                    Number(
+                        button.dataset.questionIndex
+                    );
 
+                openQuestion(
+                    questions,
+                    index,
+                    sectionType
+                );
 
-            // For now show a message.
-            alert(
-                `سيتم فتح السؤال رقم ${questionNumber} هنا.\n\nسنضيف الأسئلة الفعلية في الخطوة التالية.`
-            );
-
-        });
+            }
+        );
 
     });
 
@@ -529,110 +518,148 @@ function renderQuestionSection(
 
 
 // ============================================================
-// OPEN COURSE
+// OPEN GRAMMAR COURSE
 // ============================================================
 
-// This opens a grammar course.
 function openCourse(index) {
 
-    // Remember the current course.
+    currentSectionType = "";
+
     currentCourseIndex = index;
 
-
-    // Get the course information.
     const course =
         COURSES[currentCourseIndex];
 
-
-    // Change the modal title.
     modalTitle.textContent =
         course.title;
 
-
-    // Change lesson title.
     lessonTitle.textContent =
         course.title;
 
-
-    // Change lesson description.
     lessonDescription.textContent =
         course.description;
 
-
-    // Stop the previous video.
     courseVideo.pause();
 
-
-    // Tell the video element where the video is.
     courseVideo.src =
         course.video;
 
-
-    // Reload the video.
     courseVideo.load();
 
+    videoPlaceholder.classList.remove(
+        "hidden"
+    );
 
-    // Show the placeholder.
-    videoPlaceholder.classList.remove("hidden");
+    courseModal.classList.remove(
+        "hidden"
+    );
 
-
-    // Show the modal.
-    courseModal.classList.remove("hidden");
-
-
-    // Prevent background scrolling.
     document.body.style.overflow =
         "hidden";
 
-
-    // Update previous and next buttons.
     updateNavigationButtons();
 
 }
 
 
 // ============================================================
-// CLOSE COURSE
+// OPEN READING / LISTENING QUESTION
 // ============================================================
 
-// This closes the video player.
-function closeCourse() {
+function openQuestion(
+    questions,
+    index,
+    sectionType
+) {
 
-    // Stop the video.
+    currentQuestionList =
+        questions;
+
+    currentQuestionIndex =
+        index;
+
+    currentSectionType =
+        sectionType;
+
+    const question =
+        questions[currentQuestionIndex];
+
+    if (!question) {
+        console.error(
+            "Question not found."
+        );
+        return;
+    }
+
+    modalTitle.textContent =
+        sectionType === "reading"
+            ? "Reading"
+            : "Listening";
+
+    lessonTitle.textContent =
+        question.title;
+
+    lessonDescription.textContent =
+        question.description;
+
     courseVideo.pause();
 
+    courseVideo.src =
+        question.video;
 
-    // Remove the video source.
-    courseVideo.removeAttribute("src");
-
-
-    // Reload the video.
     courseVideo.load();
 
+    videoPlaceholder.classList.remove(
+        "hidden"
+    );
 
-    // Hide the modal.
-    courseModal.classList.add("hidden");
+    courseModal.classList.remove(
+        "hidden"
+    );
 
+    document.body.style.overflow =
+        "hidden";
 
-    // Allow page scrolling again.
-    document.body.style.overflow = "";
+    updateQuestionNavigation();
 
 }
 
 
 // ============================================================
-// PREVIOUS AND NEXT
+// CLOSE VIDEO MODAL
 // ============================================================
 
-// This controls previous and next buttons.
+function closeCourse() {
+
+    courseVideo.pause();
+
+    courseVideo.removeAttribute(
+        "src"
+    );
+
+    courseVideo.load();
+
+    courseModal.classList.add(
+        "hidden"
+    );
+
+    document.body.style.overflow =
+        "";
+
+    currentSectionType = "";
+
+}
+
+
+// ============================================================
+// GRAMMAR PREVIOUS / NEXT
+// ============================================================
+
 function updateNavigationButtons() {
 
-    // Disable previous on first course.
     previousBtn.disabled =
         currentCourseIndex === 0;
 
-
-    // Disable next on last course.
     nextBtn.disabled =
         currentCourseIndex ===
         COURSES.length - 1;
@@ -641,29 +668,37 @@ function updateNavigationButtons() {
 
 
 // ============================================================
+// READING / LISTENING PREVIOUS / NEXT
+// ============================================================
+
+function updateQuestionNavigation() {
+
+    previousBtn.disabled =
+        currentQuestionIndex === 0;
+
+    nextBtn.disabled =
+        currentQuestionIndex ===
+        currentQuestionList.length - 1;
+
+}
+
+
+// ============================================================
 // FORMAT VIDEO TIME
 // ============================================================
 
-// Convert seconds into MM:SS.
 function formatTime(seconds) {
 
-    // Return 00:00 if invalid.
     if (!Number.isFinite(seconds)) {
         return "00:00";
     }
 
-
-    // Calculate minutes.
     const minutes =
         Math.floor(seconds / 60);
 
-
-    // Calculate seconds.
     const secondsPart =
         Math.floor(seconds % 60);
 
-
-    // Return formatted time.
     return `${String(minutes).padStart(2, "0")}:${String(secondsPart).padStart(2, "0")}`;
 
 }
@@ -673,200 +708,215 @@ function formatTime(seconds) {
 // LOGIN
 // ============================================================
 
-// When the login button is clicked.
-continueBtn.addEventListener(
-    "click",
-    () => {
+if (continueBtn) {
 
-        // Get password.
-        const password =
-            passwordInput.value;
+    continueBtn.addEventListener(
+        "click",
+        () => {
 
+            const password =
+                passwordInput.value;
 
-        // Check if it contains exactly four numbers.
-        if (!/^\d{4}$/.test(password)) {
+            if (!/^\d{4}$/.test(password)) {
 
-            accessError.textContent =
-                "الرجاء إدخال رمز مكوّن من 4 أرقام.";
+                accessError.textContent =
+                    "الرجاء إدخال رمز مكوّن من 4 أرقام.";
 
-            return;
+                return;
+            }
+
+            if (password !== "1111") {
+
+                accessError.textContent =
+                    "رمز الدخول غير صحيح.";
+
+                return;
+            }
+
+            if (!consentCheck.checked) {
+
+                accessError.textContent =
+                    "يجب الموافقة على التعهد قبل الدخول.";
+
+                return;
+            }
+
+            accessScreen.classList.add(
+                "hidden"
+            );
+
+            mainWebsite.classList.remove(
+                "hidden"
+            );
+
+            renderCourses();
+
+            renderQuestionSection(
+                READING_QUESTIONS,
+                "readingGrid",
+                "reading"
+            );
+
+            renderQuestionSection(
+                LISTENING_QUESTIONS,
+                "listeningGrid",
+                "listening"
+            );
+
         }
+    );
 
-
-        // Check password.
-        if (password !== "1111") {
-
-            accessError.textContent =
-                "رمز الدخول غير صحيح.";
-
-            return;
-        }
-
-
-        // Check consent.
-        if (!consentCheck.checked) {
-
-            accessError.textContent =
-                "يجب الموافقة على التعهد قبل الدخول.";
-
-            return;
-        }
-
-
-        // Hide login.
-        accessScreen.classList.add("hidden");
-
-
-        // Show website.
-        mainWebsite.classList.remove("hidden");
-
-
-        // Create courses.
-        renderCourses();
-
-
-        // Create reading questions.
-        renderQuestionSection(
-            READING_QUESTIONS,
-            "readingGrid"
-        );
-
-
-        // Create listening questions.
-        renderQuestionSection(
-            LISTENING_QUESTIONS,
-            "listeningGrid"
-        );
-
-    }
-);
+}
 
 
 // ============================================================
 // PASSWORD INPUT
 // ============================================================
 
-// Listen for typing.
-passwordInput.addEventListener(
-    "input",
-    () => {
+if (passwordInput) {
 
-        // Remove anything that isn't a number.
-        passwordInput.value =
-            passwordInput.value.replace(/\D/g, "");
+    passwordInput.addEventListener(
+        "input",
+        () => {
 
+            passwordInput.value =
+                passwordInput.value.replace(
+                    /\D/g,
+                    ""
+                );
 
-        // Limit to four numbers.
-        passwordInput.value =
-            passwordInput.value.slice(0, 4);
+            passwordInput.value =
+                passwordInput.value.slice(
+                    0,
+                    4
+                );
 
-    }
-);
+        }
+    );
+
+}
+
 
 // ============================================================
 // THEME TOGGLE
 // ============================================================
 
-// Listen for clicks on the theme button.
-themeToggle.addEventListener(
-    "click",
-    () => {
+if (themeToggle) {
 
-        // Toggle dark mode on or off.
-        document.body.classList.toggle("dark");
+    themeToggle.addEventListener(
+        "click",
+        () => {
 
-        // Check whether dark mode is currently active.
-        const isDark =
-            document.body.classList.contains("dark");
+            document.body.classList.toggle(
+                "dark"
+            );
 
-        // Change the icon depending on the current mode.
-        themeToggle.textContent =
-            isDark ? "☀️" : "🌙";
+            const isDark =
+                document.body.classList.contains(
+                    "dark"
+                );
 
-        // Save the selected theme.
-        localStorage.setItem(
-            "theme",
-            isDark ? "dark" : "light"
-        );
+            themeToggle.textContent =
+                isDark
+                    ? "☀️"
+                    : "🌙";
 
-    }
-);
+            localStorage.setItem(
+                "theme",
+                isDark
+                    ? "dark"
+                    : "light"
+            );
+
+        }
+    );
+
+}
+
 
 // ============================================================
 // RESTORE SAVED THEME
 // ============================================================
 
-// Get the previously saved theme.
 const savedTheme =
     localStorage.getItem("theme");
 
-// Check if the saved theme is dark.
 if (savedTheme === "dark") {
 
-    // Activate dark mode.
-    document.body.classList.add("dark");
+    document.body.classList.add(
+        "dark"
+    );
 
-    // Show the sun because clicking it will return to light mode.
-    themeToggle.textContent = "☀️";
+    if (themeToggle) {
+        themeToggle.textContent =
+            "☀️";
+    }
 
 } else {
 
-    // Show the moon in light mode.
-    themeToggle.textContent = "🌙";
+    if (themeToggle) {
+        themeToggle.textContent =
+            "🌙";
+    }
 
 }
+
 
 // ============================================================
 // CLOSE BUTTON
 // ============================================================
 
-// Close modal when X is clicked.
-closeModalBtn.addEventListener(
-    "click",
-    closeCourse
-);
+if (closeModalBtn) {
+
+    closeModalBtn.addEventListener(
+        "click",
+        closeCourse
+    );
+
+}
 
 
 // ============================================================
 // CLICK OUTSIDE VIDEO
 // ============================================================
 
-// Listen for clicks on the modal.
-courseModal.addEventListener(
-    "click",
-    (event) => {
+if (courseModal) {
 
-        // Check if the overlay itself was clicked.
-        if (
-            event.target ===
-            courseModal
-        ) {
+    courseModal.addEventListener(
+        "click",
+        (event) => {
 
-            // Close the course.
-            closeCourse();
+            if (
+                event.target ===
+                courseModal
+            ) {
+
+                closeCourse();
+
+            }
 
         }
+    );
 
-    }
-);
+}
 
 
 // ============================================================
 // ESCAPE KEY
 // ============================================================
 
-// Listen for keyboard keys.
 document.addEventListener(
     "keydown",
     (event) => {
 
-        // Check Escape.
         if (
             event.key === "Escape" &&
-            !courseModal.classList.contains("hidden")
+            courseModal &&
+            !courseModal.classList.contains(
+                "hidden"
+            )
         ) {
 
-            // Close the modal.
             closeCourse();
 
         }
@@ -879,45 +929,62 @@ document.addEventListener(
 // PLAY / PAUSE
 // ============================================================
 
-// Play button.
-playBtn.addEventListener(
-    "click",
-    () => {
+if (playBtn) {
 
-        // If video is paused.
-        if (courseVideo.paused) {
+    playBtn.addEventListener(
+        "click",
+        () => {
 
-            // Play video.
-            courseVideo.play();
+            if (courseVideo.paused) {
 
-        } else {
+                courseVideo.play().catch(
+                    (error) => {
 
-            // Otherwise pause it.
-            courseVideo.pause();
+                        console.error(
+                            "Video play failed:",
+                            error
+                        );
+
+                    }
+                );
+
+            } else {
+
+                courseVideo.pause();
+
+            }
 
         }
+    );
 
-    }
-);
+}
 
 
-// Change button when video starts.
+// ============================================================
+// VIDEO PLAY EVENT
+// ============================================================
+
 courseVideo.addEventListener(
     "play",
     () => {
 
-        playBtn.textContent = "❚❚";
+        playBtn.textContent =
+            "❚❚";
 
     }
 );
 
 
-// Change button when video pauses.
+// ============================================================
+// VIDEO PAUSE EVENT
+// ============================================================
+
 courseVideo.addEventListener(
     "pause",
     () => {
 
-        playBtn.textContent = "▶";
+        playBtn.textContent =
+            "▶";
 
     }
 );
@@ -927,22 +994,18 @@ courseVideo.addEventListener(
 // VIDEO PROGRESS
 // ============================================================
 
-// Update progress while playing.
 courseVideo.addEventListener(
     "timeupdate",
     () => {
 
-        // Check duration.
         if (courseVideo.duration) {
 
-            // Calculate percentage.
             progressBar.value =
-                (courseVideo.currentTime /
-                    courseVideo.duration) *
-                100;
+                (
+                    courseVideo.currentTime /
+                    courseVideo.duration
+                ) * 100;
 
-
-            // Show current time.
             currentTime.textContent =
                 formatTime(
                     courseVideo.currentTime
@@ -958,29 +1021,24 @@ courseVideo.addEventListener(
 // VIDEO LOADED
 // ============================================================
 
-// When video information loads.
 courseVideo.addEventListener(
     "loadedmetadata",
     () => {
 
-        // Hide placeholder.
-        videoPlaceholder.classList.add("hidden");
+        videoPlaceholder.classList.add(
+            "hidden"
+        );
 
-
-        // Show duration.
         durationTime.textContent =
             formatTime(
                 courseVideo.duration
             );
 
-
-        // Reset current time.
         currentTime.textContent =
             "00:00";
 
-
-        // Reset progress.
-        progressBar.value = 0;
+        progressBar.value =
+            0;
 
     }
 );
@@ -990,13 +1048,18 @@ courseVideo.addEventListener(
 // VIDEO ERROR
 // ============================================================
 
-// If video fails to load.
 courseVideo.addEventListener(
     "error",
     () => {
 
-        // Show placeholder.
-        videoPlaceholder.classList.remove("hidden");
+        videoPlaceholder.classList.remove(
+            "hidden"
+        );
+
+        console.error(
+            "Video failed to load:",
+            courseVideo.src
+        );
 
     }
 );
@@ -1006,257 +1069,297 @@ courseVideo.addEventListener(
 // PROGRESS BAR
 // ============================================================
 
-// When progress bar moves.
-progressBar.addEventListener(
-    "input",
-    () => {
+if (progressBar) {
 
-        // Check duration.
-        if (courseVideo.duration) {
+    progressBar.addEventListener(
+        "input",
+        () => {
 
-            // Change video position.
-            courseVideo.currentTime =
-                (Number(progressBar.value) /
-                    100) *
-                courseVideo.duration;
+            if (courseVideo.duration) {
+
+                courseVideo.currentTime =
+                    (
+                        Number(
+                            progressBar.value
+                        ) / 100
+                    ) *
+                    courseVideo.duration;
+
+            }
 
         }
+    );
 
-    }
-);
+}
 
 
 // ============================================================
 // VOLUME
 // ============================================================
 
-// Change volume.
-volumeBar.addEventListener(
-    "input",
-    () => {
+if (volumeBar) {
 
-        // Set video volume.
-        courseVideo.volume =
-            Number(volumeBar.value);
+    volumeBar.addEventListener(
+        "input",
+        () => {
 
-    }
-);
+            courseVideo.volume =
+                Number(
+                    volumeBar.value
+                );
+
+        }
+    );
+
+}
 
 
 // ============================================================
 // PLAYBACK SPEED
 // ============================================================
 
-// Change playback speed.
-speedSelect.addEventListener(
-    "change",
-    () => {
+if (speedSelect) {
 
-        // Set video speed.
-        courseVideo.playbackRate =
-            Number(speedSelect.value);
+    speedSelect.addEventListener(
+        "change",
+        () => {
 
-    }
-);
+            courseVideo.playbackRate =
+                Number(
+                    speedSelect.value
+                );
+
+        }
+    );
+
+}
 
 
 // ============================================================
 // FULLSCREEN
 // ============================================================
 
-// ============================================================
-// FULLSCREEN
-// ============================================================
+if (fullscreenBtn) {
 
-// ============================================================
-// FULLSCREEN
-// ============================================================
+    fullscreenBtn.addEventListener(
+        "click",
+        async () => {
 
-// This controls the fullscreen button.
-fullscreenBtn.addEventListener(
-    "click",
-    async () => {
+            if (
+                courseVideo.requestFullscreen
+            ) {
 
-        // Try the standard fullscreen method first.
-        if (courseVideo.requestFullscreen) {
+                try {
 
-            try {
+                    await courseVideo.requestFullscreen();
 
-                // Open the video in fullscreen.
-                await courseVideo.requestFullscreen();
+                    return;
 
-                return;
+                } catch (error) {
 
-            } catch (error) {
+                    console.log(
+                        "Standard fullscreen failed.",
+                        error
+                    );
 
-                // Continue to the next method if this fails.
-                console.log(
-                    "Standard fullscreen failed.",
-                    error
-                );
+                }
 
             }
 
-        }
+            if (
+                courseVideo.webkitEnterFullscreen
+            ) {
 
-        // iPhone and iPad Safari use this method.
-        if (courseVideo.webkitEnterFullscreen) {
+                try {
 
-            try {
+                    courseVideo.webkitEnterFullscreen();
 
-                // Open Apple's native video fullscreen player.
-                courseVideo.webkitEnterFullscreen();
+                    return;
 
-                return;
+                } catch (error) {
 
-            } catch (error) {
+                    console.log(
+                        "iOS fullscreen failed.",
+                        error
+                    );
 
-                // Continue if this method also fails.
-                console.log(
-                    "iOS fullscreen failed.",
-                    error
-                );
-
-            }
-
-        }
-
-        // Some older browsers use this method.
-        if (courseVideo.webkitRequestFullscreen) {
-
-            try {
-
-                // Try the older WebKit fullscreen method.
-                await courseVideo.webkitRequestFullscreen();
-
-                return;
-
-            } catch (error) {
-
-                // Continue if this method fails.
-                console.log(
-                    "WebKit fullscreen failed.",
-                    error
-                );
+                }
 
             }
 
-        }
+            if (
+                courseVideo.webkitRequestFullscreen
+            ) {
 
-        // Some older Firefox versions use this method.
-        if (courseVideo.mozRequestFullScreen) {
+                try {
 
-            try {
+                    await courseVideo.webkitRequestFullscreen();
 
-                // Try Firefox's older fullscreen method.
-                await courseVideo.mozRequestFullScreen();
+                    return;
 
-                return;
+                } catch (error) {
 
-            } catch (error) {
+                    console.log(
+                        "WebKit fullscreen failed.",
+                        error
+                    );
 
-                // Continue if this method fails.
-                console.log(
-                    "Firefox fullscreen failed.",
-                    error
-                );
-
-            }
-
-        }
-
-        // Some older Microsoft browsers use this method.
-        if (courseVideo.msRequestFullscreen) {
-
-            try {
-
-                // Try Microsoft's older fullscreen method.
-                await courseVideo.msRequestFullscreen();
-
-                return;
-
-            } catch (error) {
-
-                // Continue if this method fails.
-                console.log(
-                    "Microsoft fullscreen failed.",
-                    error
-                );
+                }
 
             }
 
-        }
+            if (
+                courseVideo.mozRequestFullScreen
+            ) {
 
-        // Tell the user if no fullscreen method is available.
-        alert(
-            "ملء الشاشة غير متاح على هذا الجهاز أو المتصفح."
-        );
+                try {
 
-    }
-);
+                    await courseVideo.mozRequestFullScreen();
 
+                    return;
 
-// ============================================================
-// PREVIOUS LESSON
-// ============================================================
+                } catch (error) {
 
-// Previous button.
-previousBtn.addEventListener(
-    "click",
-    () => {
+                    console.log(
+                        "Firefox fullscreen failed.",
+                        error
+                    );
 
-        // Make sure there is a previous course.
-        if (
-            currentCourseIndex > 0
-        ) {
+                }
 
-            // Open previous course.
-            openCourse(
-                currentCourseIndex - 1
+            }
+
+            if (
+                courseVideo.msRequestFullscreen
+            ) {
+
+                try {
+
+                    await courseVideo.msRequestFullscreen();
+
+                    return;
+
+                } catch (error) {
+
+                    console.log(
+                        "Microsoft fullscreen failed.",
+                        error
+                    );
+
+                }
+
+            }
+
+            alert(
+                "ملء الشاشة غير متاح على هذا الجهاز أو المتصفح."
             );
 
         }
+    );
 
-    }
-);
+}
 
 
 // ============================================================
-// NEXT LESSON
+// PREVIOUS BUTTON
 // ============================================================
 
-// Next button.
-nextBtn.addEventListener(
-    "click",
-    () => {
+if (previousBtn) {
 
-        // Make sure there is another course.
-        if (
-            currentCourseIndex <
-            COURSES.length - 1
-        ) {
+    previousBtn.addEventListener(
+        "click",
+        () => {
 
-            // Open next course.
-            openCourse(
-                currentCourseIndex + 1
-            );
+            // Reading or Listening.
+            if (currentSectionType) {
+
+                if (
+                    currentQuestionIndex > 0
+                ) {
+
+                    openQuestion(
+                        currentQuestionList,
+                        currentQuestionIndex - 1,
+                        currentSectionType
+                    );
+
+                }
+
+                return;
+            }
+
+            // Grammar.
+            if (
+                currentCourseIndex > 0
+            ) {
+
+                openCourse(
+                    currentCourseIndex - 1
+                );
+
+            }
 
         }
+    );
 
-    }
-);
+}
+
+
+// ============================================================
+// NEXT BUTTON
+// ============================================================
+
+if (nextBtn) {
+
+    nextBtn.addEventListener(
+        "click",
+        () => {
+
+            // Reading or Listening.
+            if (currentSectionType) {
+
+                if (
+                    currentQuestionIndex <
+                    currentQuestionList.length - 1
+                ) {
+
+                    openQuestion(
+                        currentQuestionList,
+                        currentQuestionIndex + 1,
+                        currentSectionType
+                    );
+
+                }
+
+                return;
+            }
+
+            // Grammar.
+            if (
+                currentCourseIndex <
+                COURSES.length - 1
+            ) {
+
+                openCourse(
+                    currentCourseIndex + 1
+                );
+
+            }
+
+        }
+    );
+
+}
 
 
 // ============================================================
 // BLOCK RIGHT CLICK ON VIDEO
 // ============================================================
 
-// Prevent normal right-click on video.
 courseVideo.addEventListener(
     "contextmenu",
     (event) => {
 
-        // Stop the browser menu.
         event.preventDefault();
 
     }
@@ -1267,17 +1370,14 @@ courseVideo.addEventListener(
 // EXAM SIMULATOR BUTTON
 // ============================================================
 
-// Check that the button exists.
 if (examSimulatorBtn) {
 
-    // Listen for a click.
     examSimulatorBtn.addEventListener(
         "click",
         () => {
 
-            // Open the exam simulator page.
             window.location.href =
-                "exam-simulator.html";
+                "https://yazeedenglish.com";
 
         }
     );
@@ -1289,32 +1389,33 @@ if (examSimulatorBtn) {
 // DEVELOPMENT MODE
 // ============================================================
 
-// If development mode is enabled.
 if (DEVELOPMENT_MODE) {
 
     // Hide password screen.
-    accessScreen.classList.add("hidden");
-
+    accessScreen.classList.add(
+        "hidden"
+    );
 
     // Show main website.
-    mainWebsite.classList.remove("hidden");
-
+    mainWebsite.classList.remove(
+        "hidden"
+    );
 
     // Create grammar courses.
     renderCourses();
 
-
     // Create reading questions.
     renderQuestionSection(
         READING_QUESTIONS,
-        "readingGrid"
+        "readingGrid",
+        "reading"
     );
-
 
     // Create listening questions.
     renderQuestionSection(
         LISTENING_QUESTIONS,
-        "listeningGrid"
+        "listeningGrid",
+        "listening"
     );
 
 }
