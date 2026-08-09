@@ -1,205 +1,565 @@
 <!DOCTYPE html>
-<!-- This line tells the browser that this document uses modern HTML5. -->
 <html lang="ar" dir="rtl">
-<!-- This line starts the HTML document, sets Arabic as the language, and makes the layout right-to-left. -->
+
 <head>
-<!-- This line starts the document head, where settings, fonts, and styles are placed. -->
-<meta charset="UTF-8">
-<!-- This line makes sure Arabic and English characters display correctly. -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- This line makes the website responsive on phones, tablets, and computers. -->
-<title>Yazeed English - STEP Course</title>
-<!-- This line sets the title shown in the browser tab. -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<!-- This line helps the browser connect faster to Google Fonts. -->
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- This line prepares the browser for the Google Fonts server. -->
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
-<!-- This line loads the Tajawal Arabic font used throughout the website. -->
-<link rel="stylesheet" href="style.css">
-<!-- This line ends the CSS section. -->
+
+    <!-- This tells the browser to use modern HTML5. -->
+    <meta charset="UTF-8">
+
+    <!-- This makes the website responsive on phones and tablets. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- This is the title shown in the browser tab. -->
+    <title>Yazeed English - STEP Course</title>
+
+    <!-- This connects the Tajawal Arabic font from Google Fonts. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!-- This loads the Tajawal font with several font weights. -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- This connects our external CSS file. -->
+    <link rel="stylesheet" href="style.css">
+
 </head>
-<!-- This line ends the document head. -->
+
+
 <body>
-<!-- This line starts the visible website body. -->
-<section id="accessScreen">
-<!-- This line creates the first password and consent screen. -->
-<div class="access-card">
-<!-- This line creates the centered access card. -->
-<div class="brand-mark">YE</div>
-<!-- This line creates a simple temporary logo mark that you can replace with your real logo image later. -->
-<div class="brand-name">Yazeed English</div>
-<!-- This line displays the smaller brand name. -->
-<h1>دورة STEP</h1>
-<!-- This line displays the access-screen title. -->
-<p>أدخل رمز الدخول للمشاهدة، ثم وافق على شروط استخدام المحتوى.</p>
-<!-- This line explains what the student needs to do. -->
-<input id="passwordInput" class="password-input" type="password" inputmode="numeric" maxlength="4" placeholder="••••" aria-label="رمز الدخول">
-<!-- This line creates the four-digit password field. -->
-<label class="consent">
-<!-- This line starts the content-consent checkbox row. -->
-<input id="consentCheck" type="checkbox">
-<!-- This line creates the checkbox the student must select. -->
-<span>أتعهد بعدم مشاركة أو تسريب أو إعادة نشر أي من محتويات الدورة التي سأتمكن من الوصول إليها</span>
-<!-- This line displays the consent statement. -->
-</label>
-<!-- This line ends the consent row. -->
-<button id="continueBtn" class="primary-btn">دخول إلى الدورة</button>
-<!-- This line creates the button that checks the password and consent. -->
-<div id="accessError" class="error-message"></div>
-<!-- This line creates an area where access errors will be displayed. -->
-</div>
-<!-- This line ends the access card. -->
-</section>
-<!-- This line ends the access screen. -->
-<div id="mainWebsite" class="hidden">
-<!-- This line contains the real website and keeps it hidden until access is granted. -->
-<header class="topbar">
-<!-- This line creates the sticky website header. -->
-<div class="small-brand">
-<!-- This line creates the compact brand area. -->
-<div class="brand-mark">YZ</div>
-<!-- This line displays the compact logo mark. -->
-<strong>Yazeed English</strong>
-<!-- This line displays the compact brand name. -->
-</div>
-<!-- This line ends the compact brand area. -->
+
+    <!-- ===================================================== -->
+    <!-- TOP HEADER                                            -->
+    <!-- ===================================================== -->
+
+    <!-- This is the small header at the top of the website. -->
+    <header class="top-header">
+
+        <!-- This contains the website name and logo. -->
+        <div class="brand">
+
+            <!-- This is the small logo placeholder. -->
+            <div class="brand">
+
+        <!-- This displays your actual Yazeed English logo. -->
+        <img
+            src="logo.png"
+            alt="Yazeed English Logo"
+            class="brand-logo"
+        >
+
+            <!-- This contains the brand text. -->
+            <div class="brand-text">
+
+                <!-- Main brand name. -->
+                <strong>Yazeed English</strong>
+
+                <!-- Small description. -->
+                <span>STEP Course</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Theme button container. -->
 <div class="theme-buttons">
-<!-- This line creates the theme buttons above the left side of the website. -->
-<button id="lightBtn" class="theme-btn" title="الوضع الفاتح" aria-label="الوضع الفاتح">☀️</button>
-<!-- This line creates the light-mode button. -->
-<button id="darkBtn" class="theme-btn" title="الوضع الداكن" aria-label="الوضع الداكن">🌙</button>
-<!-- This line creates the dark-mode button. -->
+
+    <!-- This button switches between light and dark mode. -->
+    <button id="themeToggle" class="theme-btn" aria-label="تغيير الوضع">
+
+        <!-- Moon is shown initially. -->
+        🌙
+
+    </button>
+
 </div>
-<!-- This line ends the theme button group. -->
+
 </header>
-<!-- This line ends the website header. -->
-<main>
-<!-- This line starts the main website content. -->
-<section class="hero">
-<!-- This line starts the hero section. -->
-<div class="eyebrow">YAZEED ENGLISH • STEP COURSE</div>
-<!-- This line displays a small brand label above the main title. -->
-<h2>دورة ستيب | يزيد انقلش</h2>
-<!-- This line displays the main course heading. -->
-<p>اختر أي درس من القائمة أدناه لمشاهدة الفيديو التعليمي
-<!-- This line displays the main course description. -->
-</section>
-<!-- This line ends the hero section. -->
-<section class="courses-section">
-<!-- This line starts the courses section. -->
-<div class="section-heading">
-<!-- This line creates the courses heading row. -->
-<div>
-<!-- This line groups the heading and subtitle. -->
-<h3>دروس القواعد</h3>
-<!-- This line displays the courses heading. -->
-<span>اختر الدرس الذي تريد البدء به</span>
-<!-- This line displays a short instruction. -->
-</div>
-<!-- This line ends the heading group. -->
-<span id="courseCount">10 دورات</span>
-<!-- This line displays the current number of courses. -->
-</div>
-<!-- This line ends the courses heading row. -->
-<div id="courseGrid" class="course-grid"></div>
-<!-- This line creates the empty container where JavaScript will generate the ten course cards. -->
-</section>
-<!-- This line ends the courses section. -->
-</main>
-<!-- This line ends the main content. -->
-</div>
-<!-- This line ends the main website. -->
-<div id="courseModal" class="modal hidden">
-<!-- This line creates the video-course modal and keeps it hidden initially. -->
-<div class="player-modal">
-<!-- This line creates the modal player container. -->
-<div class="player-header">
-<!-- This line creates the player header. -->
-<h3 id="modalTitle">عنوان الدرس</h3>
-<!-- This line displays the selected course title. -->
-<button id="closeModalBtn" class="close-btn" aria-label="إغلاق">✕</button>
-<!-- This line creates the close button for the video window. -->
-</div>
-<!-- This line ends the player header. -->
-<div class="video-shell">
-<!-- This line creates the video area and prevents the browser's download button. -->
-<video
-    id="courseVideo"
-    preload="metadata"
-    controlsList="nodownload"
-    disablePictureInPicture
-></video>
-<!-- This line creates the HTML5 video element used by the custom player. -->
-<div id="videoPlaceholder" class="video-placeholder">
-<!-- This line creates the message shown when a course has no video file yet. -->
-<div>
-<!-- This line groups the placeholder text. -->
-<strong>الفيديو جاهز للربط</strong>
-<!-- This line tells you that the player is ready. -->
-<span>ضع رابط أو ملف الفيديو داخل بيانات الدورة في JavaScript</span>
-<!-- This line explains where you will add the actual video later. -->
-</div>
-<!-- This line ends the placeholder text group. -->
-</div>
-<!-- This line ends the video placeholder. -->
-</div>
-<!-- This line ends the video area. -->
-<div class="controls">
-<!-- This line starts the custom video controls. -->
-<button id="playBtn" class="control-btn" title="تشغيل / إيقاف">▶</button>
-<!-- This line creates the play and pause button. -->
-<span id="currentTime" class="time-label">00:00</span>
-<!-- This line displays the current video time. -->
-<input id="progressBar" class="progress" type="range" min="0" max="100" value="0" step="0.1" aria-label="تقدم الفيديو">
-<!-- This line creates the video progress slider. -->
-<span id="durationTime" class="time-label">00:00</span>
-<!-- This line displays the total video duration. -->
-<input id="volumeBar" class="volume" type="range" min="0" max="1" value="1" step="0.05" aria-label="الصوت">
-<!-- This line creates the volume slider. -->
-<select id="speedSelect" class="speed-select" aria-label="سرعة الفيديو">
-<!-- This line creates the playback speed menu. -->
-<option value="0.75">0.75×</option>
-<!-- This line adds 0.75x playback speed. -->
-<option value="1" selected>1×</option>
-<!-- This line adds normal playback speed. -->
-<option value="1.25">1.25×</option>
-<!-- This line adds 1.25x playback speed. -->
-<option value="1.5">1.5×</option>
-<!-- This line adds 1.5x playback speed. -->
-<option value="1.75">1.75×</option>
-<!-- This line adds 1.75x playback speed. -->
-<option value="2">2×</option>
-<!-- This line adds 2x playback speed. -->
-</select>
-<!-- This line ends the playback speed menu. -->
-<button id="fullscreenBtn" class="control-btn" title="ملء الشاشة">⛶</button>
-<!-- This line creates the fullscreen button. -->
-</div>
-<!-- This line ends the custom controls. -->
-<div class="lesson-info">
-<!-- This line starts the lesson information area. -->
-<h4 id="lessonTitle">عنوان الدرس</h4>
-<!-- This line displays the lesson title below the video. -->
-<p id="lessonDescription">وصف الدرس سيظهر هنا.</p>
-<!-- This line displays the lesson description. -->
-<div class="lesson-actions">
-<!-- This line creates the previous and next lesson controls. -->
-<button id="previousBtn">← الدرس السابق</button>
-<!-- This line creates the previous course button. -->
-<button id="nextBtn" class="next">الدرس التالي →</button>
-<!-- This line creates the next course button. -->
-</div>
-<!-- This line ends the lesson action buttons. -->
-</div>
-<!-- This line ends the lesson information area. -->
-</div>
-<!-- This line ends the modal player. -->
-</div>
-<!-- This line ends the course modal. -->
-<script src="script.js"></script>
-<!-- This line ends the script element. -->
+
+
+
+    <!-- ===================================================== -->
+    <!-- LOGIN / PASSWORD SCREEN                               -->
+    <!-- ===================================================== -->
+
+    <!-- This screen appears before the student enters the course. -->
+    <section id="accessScreen" class="access-screen">
+
+        <!-- This is the login box. -->
+        <div class="access-box">
+
+            <!-- Small brand name. -->
+            <div class="access-logo">
+                YE
+            </div>
+
+            <!-- Main title. -->
+            <h1>دورة ستيب STEP</h1>
+
+            <!-- Course title. -->
+            <h4> أدخل رمز الدخول للوصول إلى محتوى الدورة</P>
+
+            <!-- Welcome message. -->
+            <p class="access-description">
+              
+            </p>
+
+
+            <!-- Password input. -->
+            <input
+                id="passwordInput"
+                class="password-input"
+                type="password"
+                inputmode="numeric"
+                maxlength="4"
+                placeholder="••••"
+                autocomplete="off"
+            >
+
+
+            <!-- Consent checkbox. -->
+            <label class="consent-label">
+
+                <!-- This checkbox must be selected before entering. -->
+                <input
+                    id="consentCheck"
+                    type="checkbox"
+                >
+
+                <!-- Consent text. -->
+                <span>
+         أقر وأتعهد بعدم مشاركة أو تسريب اي محتوى من الدورة
+                   
+                </span>
+
+            </label>
+
+
+            <!-- Continue button. -->
+            <button id="continueBtn" class="continue-btn">
+                الدخول الى الدورة
+            </button>
+
+
+            <!-- Error messages will appear here. -->
+            <p id="accessError" class="access-error"></p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ===================================================== -->
+    <!-- MAIN WEBSITE                                          -->
+    <!-- ===================================================== -->
+
+    <!-- This is the actual course website. -->
+    <main id="mainWebsite" class="main-website hidden">
+
+
+        <!-- ================================================= -->
+        <!-- HERO SECTION                                      -->
+        <!-- ================================================= -->
+
+        <section class="hero-section">
+
+            <!-- Small brand label. -->
+            <span class="hero-small-title">
+                YAZEED ENGLISH
+            </span>
+
+            <!-- Main page title. -->
+            <h1>
+                دورة ستيب STEP
+            </h1>
+
+            <!-- Arabic description. -->
+            <p>
+               اختر أي درس من القائمة أدناه لمشاهدة الفيديو التعليمي
+            </p>
+
+        </section>
+
+
+
+        <!-- ================================================= -->
+        <!-- SECTION 1 - GRAMMAR                               -->
+        <!-- ================================================= -->
+
+        <section class="content-section">
+
+            <!-- Section heading. -->
+            <div class="section-heading">
+
+                <!-- Section number. -->
+                <span class="section-label">
+                    القسم الأول
+                </span>
+
+                <!-- Section title. -->
+                <h2>
+                    دروس القواعد
+                </h2>
+
+                <!-- Arabic description. -->
+                <p>
+                   Grammar section lessons
+                </p>
+
+            </div>
+
+
+            <!-- JavaScript will create the 10 courses here. -->
+            <div
+                id="courseGrid"
+                class="course-grid"
+            ></div>
+
+        </section>
+
+
+
+        <!-- ================================================= -->
+        <!-- SECTION 2 - READING                               -->
+        <!-- ================================================= -->
+
+        <section class="content-section">
+
+            <!-- Section heading. -->
+            <div class="section-heading">
+
+                <!-- Section number. -->
+                <span class="section-label">
+                    القسم الثاني
+                </span>
+
+                <!-- Section title. -->
+                <h2>
+                    دروس القراءة
+                </h2>
+
+                <!-- Arabic description. -->
+                <p>
+                    Reading section lessons
+                </p>
+
+            </div>
+
+
+            <!-- JavaScript will create the 10 reading questions here. -->
+            <div
+                id="readingGrid"
+                class="course-grid"
+            ></div>
+
+        </section>
+
+
+
+        <!-- ================================================= -->
+        <!-- SECTION 3 - LISTENING                             -->
+        <!-- ================================================= -->
+
+        <section class="content-section">
+
+            <!-- Section heading. -->
+            <div class="section-heading">
+
+                <!-- Section number. -->
+                <span class="section-label">
+                    القسم الثالث
+                </span>
+
+                <!-- Section title. -->
+                <h2>
+                    دروس الاستماع
+                </h2>
+
+                <!-- Arabic description. -->
+                <p>
+                   Listening section lessons
+                </p>
+
+            </div>
+
+
+            <!-- JavaScript will create the 10 listening questions here. -->
+            <div
+                id="listeningGrid"
+                class="course-grid"
+            ></div>
+
+        </section>
+
+
+
+        <!-- ================================================= -->
+        <!-- EXAM SIMULATOR                                   -->
+        <!-- ================================================= -->
+
+        <section class="exam-section">
+
+            <!-- Small label. -->
+            <span class="exam-small-title">
+         STEP Exam Simulator
+            </span>
+
+            <!-- Main title. -->
+            <h2>
+               اختبار ستيب المحاكي
+            </h2>
+
+            <!-- Description. -->
+            <p>
+               اختبر مستواك من خلال المحاكي الخاص بمنصة يزيد انقلش
+            </p>
+
+
+            <!-- Exam simulator button. -->
+            <button
+                id="examSimulatorBtn"
+                class="exam-btn"
+            >
+
+                <!-- Button text. -->
+                <span>
+                    اختبر مستواك الآن
+                </span>
+
+                <!-- Arrow. -->
+                <span class="exam-arrow">
+                    ←
+                </span>
+
+            </button>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ===================================================== -->
+    <!-- COURSE VIDEO MODAL                                    -->
+    <!-- ===================================================== -->
+
+    <!-- This is the popup that opens when a course is clicked. -->
+    <div
+        id="courseModal"
+        class="modal hidden"
+    >
+
+        <!-- Video modal box. -->
+        <div class="video-modal">
+
+
+            <!-- Modal top bar. -->
+            <div class="video-header">
+
+                <!-- Current course title. -->
+                <h3 id="modalTitle">
+                    Present Simple
+                </h3>
+
+                <!-- Close button. -->
+                <button
+                    id="closeModalBtn"
+                    class="close-btn"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <!-- Video area. -->
+            <div class="video-container">
+
+                <!-- Placeholder shown before video loads. -->
+                <div
+                    id="videoPlaceholder"
+                    class="video-placeholder"
+                >
+
+                    <!-- Placeholder logo. -->
+                    <div class="placeholder-logo">
+                        YE
+                    </div>
+
+                    <!-- Placeholder text. -->
+                    <p>
+                        Yazeed English
+                    </p>
+
+                </div>
+
+
+                <!-- HTML5 video. -->
+                <video
+                    id="courseVideo"
+                    playsinline
+                    preload="metadata"
+                ></video>
+
+            </div>
+
+
+            <!-- Custom video controls. -->
+            <div class="video-controls">
+
+
+                <!-- Play button. -->
+                <button
+                    id="playBtn"
+                    class="control-btn"
+                >
+                    ▶
+                </button>
+
+
+                <!-- Current video time. -->
+                <span id="currentTime">
+                    00:00
+                </span>
+
+
+                <!-- Progress bar. -->
+                <input
+                    id="progressBar"
+                    class="progress-bar"
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="0"
+                >
+
+
+                <!-- Total video time. -->
+                <span id="durationTime">
+                    00:00
+                </span>
+
+
+                <!-- Volume slider. -->
+                <span class="volume-icon">
+                    🔊
+                </span>
+
+                <input
+                    id="volumeBar"
+                    class="volume-bar"
+                    type="range"
+                    min="0"
+                    max="1"
+                    step="0.01"
+                    value="1"
+                >
+
+
+                <!-- Playback speed. -->
+                <select
+                    id="speedSelect"
+                    class="speed-select"
+                >
+
+                    <option value="0.75">
+                        0.75×
+                    </option>
+
+                    <option value="1" selected>
+                        1×
+                    </option>
+
+                    <option value="1.25">
+                        1.25×
+                    </option>
+
+                    <option value="1.5">
+                        1.5×
+                    </option>
+
+                    <option value="2">
+                        2×
+                    </option>
+
+                </select>
+
+
+                <!-- Fullscreen button. -->
+                <button
+                    id="fullscreenBtn"
+                    class="control-btn"
+                >
+                    ⛶
+                </button>
+
+            </div>
+
+
+            <!-- Lesson information. -->
+            <div class="lesson-info">
+
+                <!-- Lesson title. -->
+                <h3 id="lessonTitle">
+                    Present Simple
+                </h3>
+
+                <!-- Lesson description. -->
+                <p id="lessonDescription">
+                    شرح قاعدة المضارع البسيط.
+                </p>
+
+            </div>
+
+
+            <!-- Previous and next buttons. -->
+            <div class="lesson-navigation">
+
+                <!-- Previous lesson. -->
+                <button
+                    id="previousBtn"
+                    class="navigation-btnP"
+                >
+                    → السابق
+                </button>
+
+                <!-- Next lesson. -->
+                <button
+                    id="nextBtn"
+                    class="navigation-btnN"
+                >
+                    التالي ←
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ===================================================== -->
+<!-- FOOTER                                                -->
+<!-- ===================================================== -->
+
+<!-- This is the footer at the bottom of the website. -->
+<footer class="site-footer">
+
+    <!-- This line separates the footer from the content. -->
+    <div class="footer-line"></div>
+
+    <!-- Copyright text. -->
+    <p>
+        جميع الحقوق محفوظة © 2026 Yazeed English
+    </p>
+
+</footer>
+
+
+
+    <!-- This connects our JavaScript file. -->
+    <script src="script.js"></script>
+
 </body>
-<!-- This line ends the visible website body. -->
+
 </html>
-<!-- This line ends the HTML document. -->

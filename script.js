@@ -1,90 +1,238 @@
-// This line creates the list of all courses.
-// You can add more courses later by adding another object inside this list.
+// ============================================================
+// DEVELOPMENT MODE
+// ============================================================
+
+// Change this to false when you want the password screen back.
+const DEVELOPMENT_MODE = true;
+
+
+// ============================================================
+// GRAMMAR COURSES
+// ============================================================
+
+// This array contains all grammar courses.
 const COURSES = [
-  // This is course number 1.
-  {
-    // This is the English title of the course.
-    title: "Present Simple",
 
-    // This is the Arabic description shown to the student.
-    description:
-      "شرح قاعدة المضارع البسيط واستخداماته الأساسية مع أمثلة تساعدك على فهم الأسئلة في اختبار STEP.",
+    // Course 1.
+    {
+        title: "Present Simple",
+        description:
+            "شرح قاعدة المضارع البسيط واستخداماته الأساسية مع أمثلة تساعدك على فهم أسئلة STEP.",
+        video: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+    },
 
-    // This is where the video file for this course will be located.
-    video: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
-  },
+    // Course 2.
+    {
+        title: "Present Continuous",
+        description:
+            "تعلم استخدام المضارع المستمر وكيفية تمييزه في الجمل والأسئلة.",
+        video: "videos/present-continuous.mp4"
+    },
 
-  // This is course number 2.
-  {
-    title: "Present Continuous",
-    description:
-      "تعلم استخدام المضارع المستمر وكيفية تمييزه في الجمل والأسئلة.",
-    video: "videos/present-continuous.mp4"
-  },
+    // Course 3.
+    {
+        title: "Past Simple",
+        description:
+            "شرح الماضي البسيط وطريقة تكوين الجمل والأسئلة والنفي.",
+        video: "videos/past-simple.mp4"
+    },
 
-  // This is course number 3.
-  {
-    title: "Past Simple",
-    description:
-      "شرح الماضي البسيط وطريقة تكوين الجمل والأسئلة والنفي.",
-    video: "videos/past-simple.mp4"
-  },
+    // Course 4.
+    {
+        title: "Future",
+        description:
+            "تعرف على أهم طرق التعبير عن المستقبل والأسئلة الشائعة في STEP.",
+        video: "videos/future.mp4"
+    },
 
-  // This is course number 4.
-  {
-    title: "Future",
-    description:
-      "تعرف على أهم طرق التعبير عن المستقبل والأسئلة الشائعة في STEP.",
-    video: "videos/future.mp4"
-  },
+    // Course 5.
+    {
+        title: "Comparatives",
+        description:
+            "شرح المقارنة بين الأشياء والأشخاص مع أهم القواعد والأخطاء الشائعة.",
+        video: "videos/comparatives.mp4"
+    },
 
-  // This is course number 5.
-  {
-    title: "Comparatives",
-    description:
-      "شرح المقارنة بين الأشياء والأشخاص مع أهم القواعد والأخطاء الشائعة.",
-    video: "videos/comparatives.mp4"
-  },
+    // Course 6.
+    {
+        title: "Superlatives",
+        description:
+            "تعلم صيغة التفضيل وكيفية اختيار الإجابة الصحيحة بسرعة.",
+        video: "videos/superlatives.mp4"
+    },
 
-  // This is course number 6.
-  {
-    title: "Superlatives",
-    description:
-      "تعلم صيغة التفضيل وكيفية اختيار الإجابة الصحيحة بسرعة.",
-    video: "videos/superlatives.mp4"
-  },
+    // Course 7.
+    {
+        title: "Modal Verbs",
+        description:
+            "شرح الأفعال الناقصة مثل can و should و must بطريقة مناسبة لاختبار STEP.",
+        video: "videos/modal-verbs.mp4"
+    },
 
-  // This is course number 7.
-  {
-    title: "Modal Verbs",
-    description:
-      "شرح الأفعال الناقصة مثل can و should و must بطريقة مناسبة لاختبار STEP.",
-    video: "videos/modal-verbs.mp4"
-  },
+    // Course 8.
+    {
+        title: "Vocabulary",
+        description:
+            "طريقة التعامل مع أسئلة المفردات والمرادفات واختيار الكلمة الأقرب في المعنى.",
+        video: "videos/vocabulary.mp4"
+    },
 
-  // This is course number 8.
-  {
-    title: "Vocabulary",
-    description:
-      "طريقة التعامل مع أسئلة المفردات والمرادفات واختيار الكلمة الأقرب في المعنى.",
-    video: "videos/vocabulary.mp4"
-  },
+    // Course 9.
+    {
+        title: "Reading Skills",
+        description:
+            "استراتيجيات القراءة والبحث عن الكلمات المفتاحية للوصول إلى الإجابة بسرعة.",
+        video: "videos/reading-skills.mp4"
+    },
 
-  // This is course number 9.
-  {
-    title: "Reading Skills",
-    description:
-      "استراتيجيات القراءة والبحث عن الكلمات المفتاحية للوصول إلى الإجابة بسرعة.",
-    video: "videos/reading-skills.mp4"
-  },
+    // Course 10.
+    {
+        title: "Listening Skills",
+        description:
+            "استراتيجيات مهمة لفهم المقاطع الصوتية والتركيز على المعلومات التي تقود للإجابة.",
+        video: "videos/listening-skills.mp4"
+    }
 
-  // This is course number 10.
-  {
-    title: "Listening Skills",
-    description:
-      "استراتيجيات مهمة لفهم المقاطع الصوتية والتركيز على المعلومات التي تقود للإجابة.",
-    video: "videos/listening-skills.mp4"
-  }
+];
+
+
+// ============================================================
+// READING QUESTIONS
+// ============================================================
+
+// This array contains 10 reading questions.
+const READING_QUESTIONS = [
+
+    {
+        number: 1,
+        title: "Reading Question 01",
+        description: "اقرأ القطعة ثم اختر الإجابة الصحيحة."
+    },
+
+    {
+        number: 2,
+        title: "Reading Question 02",
+        description: "حدد الفكرة الرئيسية للقطعة."
+    },
+
+    {
+        number: 3,
+        title: "Reading Question 03",
+        description: "ابحث عن المعلومة المطلوبة داخل النص."
+    },
+
+    {
+        number: 4,
+        title: "Reading Question 04",
+        description: "اختر الإجابة التي يدعمها النص."
+    },
+
+    {
+        number: 5,
+        title: "Reading Question 05",
+        description: "حدد معنى الكلمة من سياق النص."
+    },
+
+    {
+        number: 6,
+        title: "Reading Question 06",
+        description: "حدد المعلومة الصحيحة حسب القطعة."
+    },
+
+    {
+        number: 7,
+        title: "Reading Question 07",
+        description: "ابحث عن التفاصيل المهمة في النص."
+    },
+
+    {
+        number: 8,
+        title: "Reading Question 08",
+        description: "حدد الاستنتاج الصحيح من القطعة."
+    },
+
+    {
+        number: 9,
+        title: "Reading Question 09",
+        description: "اختر الإجابة الأقرب لما ورد في النص."
+    },
+
+    {
+        number: 10,
+        title: "Reading Question 10",
+        description: "اختر الإجابة الصحيحة بناءً على القطعة."
+    }
+
+];
+
+
+// ============================================================
+// LISTENING QUESTIONS
+// ============================================================
+
+// This array contains 10 listening questions.
+const LISTENING_QUESTIONS = [
+
+    {
+        number: 1,
+        title: "Listening Question 01",
+        description: "استمع إلى المقطع ثم اختر الإجابة الصحيحة."
+    },
+
+    {
+        number: 2,
+        title: "Listening Question 02",
+        description: "استمع جيدًا وحدد المعلومة المطلوبة."
+    },
+
+    {
+        number: 3,
+        title: "Listening Question 03",
+        description: "حدد الفكرة الرئيسية للمقطع."
+    },
+
+    {
+        number: 4,
+        title: "Listening Question 04",
+        description: "استمع إلى التفاصيل واختر الإجابة الصحيحة."
+    },
+
+    {
+        number: 5,
+        title: "Listening Question 05",
+        description: "حدد ما يقوله المتحدث في المقطع."
+    },
+
+    {
+        number: 6,
+        title: "Listening Question 06",
+        description: "استمع وحدد المعلومة الصحيحة."
+    },
+
+    {
+        number: 7,
+        title: "Listening Question 07",
+        description: "ركز على الكلمات والمعلومات المهمة."
+    },
+
+    {
+        number: 8,
+        title: "Listening Question 08",
+        description: "حدد الاستنتاج الصحيح بعد الاستماع."
+    },
+
+    {
+        number: 9,
+        title: "Listening Question 09",
+        description: "اختر الإجابة التي تتوافق مع المقطع."
+    },
+
+    {
+        number: 10,
+        title: "Listening Question 10",
+        description: "استمع جيدًا ثم اختر الإجابة الصحيحة."
+    }
+
 ];
 
 
@@ -92,148 +240,291 @@ const COURSES = [
 // GET HTML ELEMENTS
 // ============================================================
 
-// This gets the password screen from the HTML.
-const accessScreen = document.getElementById("accessScreen");
+// Get the login screen.
+const accessScreen =
+    document.getElementById("accessScreen");
 
-// This gets the main website.
-const mainWebsite = document.getElementById("mainWebsite");
+// Get the main website.
+const mainWebsite =
+    document.getElementById("mainWebsite");
 
-// This gets the password input.
-const passwordInput = document.getElementById("passwordInput");
+// Get the password input.
+const passwordInput =
+    document.getElementById("passwordInput");
 
-// This gets the consent checkbox.
-const consentCheck = document.getElementById("consentCheck");
+// Get the consent checkbox.
+const consentCheck =
+    document.getElementById("consentCheck");
 
-// This gets the continue button.
-const continueBtn = document.getElementById("continueBtn");
+// Get the login button.
+const continueBtn =
+    document.getElementById("continueBtn");
 
-// This gets the error message area.
-const accessError = document.getElementById("accessError");
+// Get the error message.
+const accessError =
+    document.getElementById("accessError");
 
-// This gets the light-mode button.
-const lightBtn = document.getElementById("lightBtn");
+// Get the single theme toggle button.
+const themeToggle =
+    document.getElementById("themeToggle");
 
-// This gets the dark-mode button.
-const darkBtn = document.getElementById("darkBtn");
+// Get grammar grid.
+const courseGrid =
+    document.getElementById("courseGrid");
 
-// This gets the course grid.
-const courseGrid = document.getElementById("courseGrid");
+// Get reading grid.
+const readingGrid =
+    document.getElementById("readingGrid");
 
-// This gets the course count.
-const courseCount = document.getElementById("courseCount");
+// Get listening grid.
+const listeningGrid =
+    document.getElementById("listeningGrid");
 
-// This gets the course modal.
-const courseModal = document.getElementById("courseModal");
+// Get video modal.
+const courseModal =
+    document.getElementById("courseModal");
 
-// This gets the close button.
-const closeModalBtn = document.getElementById("closeModalBtn");
+// Get close button.
+const closeModalBtn =
+    document.getElementById("closeModalBtn");
 
-// This gets the title inside the video player.
-const modalTitle = document.getElementById("modalTitle");
+// Get modal title.
+const modalTitle =
+    document.getElementById("modalTitle");
 
-// This gets the lesson title below the video.
-const lessonTitle = document.getElementById("lessonTitle");
+// Get lesson title.
+const lessonTitle =
+    document.getElementById("lessonTitle");
 
-// This gets the lesson description.
-const lessonDescription = document.getElementById("lessonDescription");
+// Get lesson description.
+const lessonDescription =
+    document.getElementById("lessonDescription");
 
-// This gets the previous button.
-const previousBtn = document.getElementById("previousBtn");
+// Get video.
+const courseVideo =
+    document.getElementById("courseVideo");
 
-// This gets the next button.
-const nextBtn = document.getElementById("nextBtn");
+// Get placeholder.
+const videoPlaceholder =
+    document.getElementById("videoPlaceholder");
 
-// This gets the HTML video element.
-const courseVideo = document.getElementById("courseVideo");
+// Get play button.
+const playBtn =
+    document.getElementById("playBtn");
 
-// This gets the video placeholder.
-const videoPlaceholder = document.getElementById("videoPlaceholder");
+// Get progress bar.
+const progressBar =
+    document.getElementById("progressBar");
 
-// This gets the play button.
-const playBtn = document.getElementById("playBtn");
+// Get current time.
+const currentTime =
+    document.getElementById("currentTime");
 
-// This gets the progress bar.
-const progressBar = document.getElementById("progressBar");
+// Get duration.
+const durationTime =
+    document.getElementById("durationTime");
 
-// This gets the current-time text.
-const currentTime = document.getElementById("currentTime");
+// Get volume.
+const volumeBar =
+    document.getElementById("volumeBar");
 
-// This gets the duration text.
-const durationTime = document.getElementById("durationTime");
+// Get speed selector.
+const speedSelect =
+    document.getElementById("speedSelect");
 
-// This gets the volume slider.
-const volumeBar = document.getElementById("volumeBar");
+// Get fullscreen button.
+const fullscreenBtn =
+    document.getElementById("fullscreenBtn");
 
-// This gets the playback-speed selector.
-const speedSelect = document.getElementById("speedSelect");
+// Get previous button.
+const previousBtn =
+    document.getElementById("previousBtn");
 
-// This gets the fullscreen button.
-const fullscreenBtn = document.getElementById("fullscreenBtn");
+// Get next button.
+const nextBtn =
+    document.getElementById("nextBtn");
+
+// Get exam simulator button.
+const examSimulatorBtn =
+    document.getElementById("examSimulatorBtn");
 
 
-// This stores the number of the currently opened course.
-// JavaScript starts counting arrays from 0.
+// ============================================================
+// CURRENT COURSE
+// ============================================================
+
+// This remembers which grammar course is open.
 let currentCourseIndex = 0;
 
 
 // ============================================================
-// CREATE COURSE CARDS
+// CREATE GRAMMAR COURSES
 // ============================================================
 
-// This function creates all course cards on the page.
+// This function creates the 10 grammar cards.
 function renderCourses() {
 
-  // This clears the course grid before adding the cards.
-  courseGrid.innerHTML = "";
-
-  // This automatically displays the number of courses.
-  courseCount.textContent = `${COURSES.length} الدروس`;
-
-  // This loops through every course in the COURSES array.
-  COURSES.forEach((course, index) => {
-
-    // This creates a new HTML article element.
-    const card = document.createElement("article");
-
-    // This gives the article the CSS class "course-card".
-    card.className = "course-card";
-
-    // This creates the inside of the course card.
-    card.innerHTML = `
-      <div class="course-number">
-        ${String(index + 1).padStart(2, "0")}
-      </div>
-
-      <h4>${course.title}</h4>
-
-      <p>${course.description}</p>
-
-      <button
-        class="course-btn"
-        data-index="${index}"
-      >
-        مشاهدة الدرس
-      </button>
-    `;
-
-    // This adds the course card to the page.
-    courseGrid.appendChild(card);
-  });
+    // Clear the grid.
+    courseGrid.innerHTML = "";
 
 
-  // This finds all buttons inside the course cards.
-  document.querySelectorAll(".course-btn").forEach((button) => {
+    // Go through every course.
+    COURSES.forEach((course, index) => {
 
-    // This listens for a click on each course button.
-    button.addEventListener("click", () => {
+        // Create a card.
+        const card =
+            document.createElement("article");
 
-      // This gets the course number stored in data-index.
-      const index = Number(button.dataset.index);
 
-      // This opens the selected course.
-      openCourse(index);
+        // Give it the course-card CSS class.
+        card.className = "course-card";
+
+
+        // Add the card content.
+        card.innerHTML = `
+
+            <div class="course-number">
+                ${String(index + 1).padStart(2, "0")}
+            </div>
+
+            <h4>
+                ${course.title}
+            </h4>
+
+            <p>
+                ${course.description}
+            </p>
+
+            <button
+                class="course-btn"
+                data-course-index="${index}"
+            >
+                مشاهدة الدرس
+            </button>
+
+        `;
+
+
+        // Add the card to the page.
+        courseGrid.appendChild(card);
+
     });
-  });
+
+
+    // Find all course buttons.
+    const buttons =
+        document.querySelectorAll(
+            "[data-course-index]"
+        );
+
+
+    // Add a click event to every button.
+    buttons.forEach((button) => {
+
+        button.addEventListener("click", () => {
+
+            // Get the course number.
+            const index =
+                Number(button.dataset.courseIndex);
+
+            // Open the course.
+            openCourse(index);
+
+        });
+
+    });
+
+}
+
+
+// ============================================================
+// CREATE READING AND LISTENING CARDS
+// ============================================================
+
+// This function creates question cards.
+function renderQuestionSection(
+    questions,
+    containerId
+) {
+
+    // Find the correct grid.
+    const container =
+        document.getElementById(containerId);
+
+
+    // Clear the grid.
+    container.innerHTML = "";
+
+
+    // Go through all questions.
+    questions.forEach((question) => {
+
+        // Create a card.
+        const card =
+            document.createElement("article");
+
+
+        // Give the card its CSS class.
+        card.className = "course-card";
+
+
+        // Create the card content.
+        card.innerHTML = `
+
+            <div class="course-number">
+                ${String(question.number).padStart(2, "0")}
+            </div>
+
+            <h4>
+                ${question.title}
+            </h4>
+
+            <p>
+                ${question.description}
+            </p>
+
+            <button
+                class="course-btn question-btn"
+                data-question-number="${question.number}"
+            >
+                بدء السؤال
+            </button>
+
+        `;
+
+
+        // Add the card to the page.
+        container.appendChild(card);
+
+    });
+
+
+    // Find the question buttons.
+    const questionButtons =
+        container.querySelectorAll(
+            ".question-btn"
+        );
+
+
+    // Add click events.
+    questionButtons.forEach((button) => {
+
+        button.addEventListener("click", () => {
+
+            // Get the question number.
+            const questionNumber =
+                button.dataset.questionNumber;
+
+
+            // For now show a message.
+            alert(
+                `سيتم فتح السؤال رقم ${questionNumber} هنا.\n\nسنضيف الأسئلة الفعلية في الخطوة التالية.`
+            );
+
+        });
+
+    });
+
 }
 
 
@@ -241,102 +532,62 @@ function renderCourses() {
 // OPEN COURSE
 // ============================================================
 
-// This function opens a course inside the video modal.
+// This opens a grammar course.
 function openCourse(index) {
 
-  // This remembers which course is currently open.
-  currentCourseIndex = index;
-
-  // This gets the selected course from the COURSES array.
-  const course = COURSES[currentCourseIndex];
-
-  // This changes the title at the top of the video player.
-  modalTitle.textContent = course.title;
-
-  // This changes the lesson title below the video.
-  lessonTitle.textContent = course.title;
-
-  // This changes the lesson description.
-  lessonDescription.textContent = course.description;
-
-  // This stops any previous video.
-  courseVideo.pause();
-
-  // This tells the video player which video to load.
-  courseVideo.src = course.video;
-
-  // This reloads the video.
-  courseVideo.load();
-
-  // This shows the placeholder until the video successfully loads.
-  videoPlaceholder.classList.remove("hidden");
-
-  // This tells the browser to hide the placeholder when the video loads.
-  courseVideo.addEventListener(
-    "loadedmetadata",
-    hideVideoPlaceholder,
-    { once: true }
-  );
-
-  // This keeps the placeholder visible if the video fails.
-  courseVideo.addEventListener(
-    "error",
-    showVideoPlaceholder,
-    { once: true }
-  );
-
-  // This shows the modal.
-  courseModal.classList.remove("hidden");
-
-  // This prevents the background website from scrolling.
-  document.body.style.overflow = "hidden";
-
-  // This updates the Previous and Next buttons.
-  updateNavigationButtons();
-}
+    // Remember the current course.
+    currentCourseIndex = index;
 
 
-// ============================================================
-// VIDEO PLACEHOLDER
-// ============================================================
-
-// This function hides the video placeholder.
-function hideVideoPlaceholder() {
-
-  // This adds the hidden class.
-  videoPlaceholder.classList.add("hidden");
-}
+    // Get the course information.
+    const course =
+        COURSES[currentCourseIndex];
 
 
-// This function shows the video placeholder.
-function showVideoPlaceholder() {
-
-  // This removes the hidden class.
-  videoPlaceholder.classList.remove("hidden");
-}
+    // Change the modal title.
+    modalTitle.textContent =
+        course.title;
 
 
-// ============================================================
-// PREVIOUS / NEXT BUTTONS
-// ============================================================
+    // Change lesson title.
+    lessonTitle.textContent =
+        course.title;
 
-// This function controls the previous and next buttons.
-function updateNavigationButtons() {
 
-  // Disable Previous if we are on the first course.
-  previousBtn.disabled = currentCourseIndex === 0;
+    // Change lesson description.
+    lessonDescription.textContent =
+        course.description;
 
-  // Disable Next if we are on the final course.
-  nextBtn.disabled =
-    currentCourseIndex === COURSES.length - 1;
 
-  // Make the Previous button visually lighter when disabled.
-  previousBtn.style.opacity =
-    previousBtn.disabled ? "0.45" : "1";
+    // Stop the previous video.
+    courseVideo.pause();
 
-  // Make the Next button visually lighter when disabled.
-  nextBtn.style.opacity =
-    nextBtn.disabled ? "0.45" : "1";
+
+    // Tell the video element where the video is.
+    courseVideo.src =
+        course.video;
+
+
+    // Reload the video.
+    courseVideo.load();
+
+
+    // Show the placeholder.
+    videoPlaceholder.classList.remove("hidden");
+
+
+    // Show the modal.
+    courseModal.classList.remove("hidden");
+
+
+    // Prevent background scrolling.
+    document.body.style.overflow =
+        "hidden";
+
+
+    // Update previous and next buttons.
+    updateNavigationButtons();
+
 }
 
 
@@ -344,17 +595,48 @@ function updateNavigationButtons() {
 // CLOSE COURSE
 // ============================================================
 
-// This function closes the video modal.
+// This closes the video player.
 function closeCourse() {
 
-  // Stop the video.
-  courseVideo.pause();
+    // Stop the video.
+    courseVideo.pause();
 
-  // Hide the modal.
-  courseModal.classList.add("hidden");
 
-  // Allow the main website to scroll again.
-  document.body.style.overflow = "";
+    // Remove the video source.
+    courseVideo.removeAttribute("src");
+
+
+    // Reload the video.
+    courseVideo.load();
+
+
+    // Hide the modal.
+    courseModal.classList.add("hidden");
+
+
+    // Allow page scrolling again.
+    document.body.style.overflow = "";
+
+}
+
+
+// ============================================================
+// PREVIOUS AND NEXT
+// ============================================================
+
+// This controls previous and next buttons.
+function updateNavigationButtons() {
+
+    // Disable previous on first course.
+    previousBtn.disabled =
+        currentCourseIndex === 0;
+
+
+    // Disable next on last course.
+    nextBtn.disabled =
+        currentCourseIndex ===
+        COURSES.length - 1;
+
 }
 
 
@@ -362,369 +644,576 @@ function closeCourse() {
 // FORMAT VIDEO TIME
 // ============================================================
 
-// This function converts seconds into MM:SS.
+// Convert seconds into MM:SS.
 function formatTime(seconds) {
 
-  // If the value is not a valid number, return 00:00.
-  if (!Number.isFinite(seconds)) {
-    return "00:00";
-  }
+    // Return 00:00 if invalid.
+    if (!Number.isFinite(seconds)) {
+        return "00:00";
+    }
 
-  // Calculate the number of minutes.
-  const minutes = Math.floor(seconds / 60);
 
-  // Calculate the remaining seconds.
-  const remainingSeconds = Math.floor(seconds % 60);
+    // Calculate minutes.
+    const minutes =
+        Math.floor(seconds / 60);
 
-  // Return something like 02:35.
-  return `${String(minutes).padStart(2, "0")}:${String(
-    remainingSeconds
-  ).padStart(2, "0")}`;
+
+    // Calculate seconds.
+    const secondsPart =
+        Math.floor(seconds % 60);
+
+
+    // Return formatted time.
+    return `${String(minutes).padStart(2, "0")}:${String(secondsPart).padStart(2, "0")}`;
+
 }
 
 
 // ============================================================
-// PASSWORD SYSTEM
+// LOGIN
 // ============================================================
 
-// This listens for a click on the login button.
-continueBtn.addEventListener("click", () => {
+// When the login button is clicked.
+continueBtn.addEventListener(
+    "click",
+    () => {
 
-  // Get whatever the user typed.
-  const password = passwordInput.value;
-
-
-  // Check that the password contains exactly four numbers.
-  if (!/^\d{4}$/.test(password)) {
-
-    // Show an error message.
-    accessError.textContent =
-      "الرجاء إدخال رمز مكوّن من 4 أرقام.";
-
-    // Stop the function.
-    return;
-  }
+        // Get password.
+        const password =
+            passwordInput.value;
 
 
-  // Check whether the password is correct.
-  if (password !== "1111") {
+        // Check if it contains exactly four numbers.
+        if (!/^\d{4}$/.test(password)) {
 
-    // Show an incorrect-password message.
-    accessError.textContent =
-      "رمز الدخول غير صحيح.";
+            accessError.textContent =
+                "الرجاء إدخال رمز مكوّن من 4 أرقام.";
 
-    // Stop the function.
-    return;
-  }
+            return;
+        }
 
 
-  // Check whether the student accepted the agreement.
-  if (!consentCheck.checked) {
+        // Check password.
+        if (password !== "1111") {
 
-    // Show the consent error.
-    accessError.textContent =
-      "يجب الموافقة على التعهد قبل الدخول.";
+            accessError.textContent =
+                "رمز الدخول غير صحيح.";
 
-    // Stop the function.
-    return;
-  }
+            return;
+        }
 
 
-  // Hide the password screen.
-  accessScreen.classList.add("hidden");
+        // Check consent.
+        if (!consentCheck.checked) {
 
-  // Show the real website.
-  mainWebsite.classList.remove("hidden");
+            accessError.textContent =
+                "يجب الموافقة على التعهد قبل الدخول.";
 
-  // Generate all course cards.
-  renderCourses();
-});
+            return;
+        }
+
+
+        // Hide login.
+        accessScreen.classList.add("hidden");
+
+
+        // Show website.
+        mainWebsite.classList.remove("hidden");
+
+
+        // Create courses.
+        renderCourses();
+
+
+        // Create reading questions.
+        renderQuestionSection(
+            READING_QUESTIONS,
+            "readingGrid"
+        );
+
+
+        // Create listening questions.
+        renderQuestionSection(
+            LISTENING_QUESTIONS,
+            "listeningGrid"
+        );
+
+    }
+);
 
 
 // ============================================================
 // PASSWORD INPUT
 // ============================================================
 
-// This listens whenever the user types something.
-passwordInput.addEventListener("input", () => {
+// Listen for typing.
+passwordInput.addEventListener(
+    "input",
+    () => {
 
-  // Remove anything that isn't a number.
-  passwordInput.value =
-    passwordInput.value.replace(/\D/g, "");
-
-  // Keep the input limited to four characters.
-  passwordInput.value =
-    passwordInput.value.slice(0, 4);
-});
+        // Remove anything that isn't a number.
+        passwordInput.value =
+            passwordInput.value.replace(/\D/g, "");
 
 
-// ============================================================
-// DARK MODE
-// ============================================================
+        // Limit to four numbers.
+        passwordInput.value =
+            passwordInput.value.slice(0, 4);
 
-// This activates light mode.
-lightBtn.addEventListener("click", () => {
-
-  // Remove the dark class.
-  document.body.classList.remove("dark");
-
-  // Remember the user's choice.
-  localStorage.setItem("theme", "light");
-});
-
-
-// This activates dark mode.
-darkBtn.addEventListener("click", () => {
-
-  // Add the dark class.
-  document.body.classList.add("dark");
-
-  // Remember the user's choice.
-  localStorage.setItem("theme", "dark");
-});
-
+    }
+);
 
 // ============================================================
-// REMEMBER THEME
+// THEME TOGGLE
 // ============================================================
 
-// Check whether the user previously selected dark mode.
-if (localStorage.getItem("theme") === "dark") {
+// Listen for clicks on the theme button.
+themeToggle.addEventListener(
+    "click",
+    () => {
 
-  // Restore dark mode.
-  document.body.classList.add("dark");
+        // Toggle dark mode on or off.
+        document.body.classList.toggle("dark");
+
+        // Check whether dark mode is currently active.
+        const isDark =
+            document.body.classList.contains("dark");
+
+        // Change the icon depending on the current mode.
+        themeToggle.textContent =
+            isDark ? "☀️" : "🌙";
+
+        // Save the selected theme.
+        localStorage.setItem(
+            "theme",
+            isDark ? "dark" : "light"
+        );
+
+    }
+);
+
+// ============================================================
+// RESTORE SAVED THEME
+// ============================================================
+
+// Get the previously saved theme.
+const savedTheme =
+    localStorage.getItem("theme");
+
+// Check if the saved theme is dark.
+if (savedTheme === "dark") {
+
+    // Activate dark mode.
+    document.body.classList.add("dark");
+
+    // Show the sun because clicking it will return to light mode.
+    themeToggle.textContent = "☀️";
+
+} else {
+
+    // Show the moon in light mode.
+    themeToggle.textContent = "🌙";
+
 }
 
-// TEMPORARY: Skip the login screen while developing the website. REMOVE LATER
-accessScreen.classList.add("hidden");
+// ============================================================
+// CLOSE BUTTON
+// ============================================================
 
-// TEMPORARY: Show the main website immediately. REMOVE LATER
-mainWebsite.classList.remove("hidden");
-
-// TEMPORARY: Load the courses immediately. REMOVE LATER
-renderCourses(); 
+// Close modal when X is clicked.
+closeModalBtn.addEventListener(
+    "click",
+    closeCourse
+);
 
 
 // ============================================================
-// CLOSE MODAL
+// CLICK OUTSIDE VIDEO
 // ============================================================
 
-// Close the modal using the X button.
-closeModalBtn.addEventListener("click", closeCourse);
+// Listen for clicks on the modal.
+courseModal.addEventListener(
+    "click",
+    (event) => {
 
+        // Check if the overlay itself was clicked.
+        if (
+            event.target ===
+            courseModal
+        ) {
 
-// Close the modal when clicking the dark area outside the player.
-courseModal.addEventListener("click", (event) => {
+            // Close the course.
+            closeCourse();
 
-  // Check whether the user clicked the overlay itself.
-  if (event.target === courseModal) {
+        }
 
-    // Close the course.
-    closeCourse();
-  }
-});
+    }
+);
 
 
 // ============================================================
 // ESCAPE KEY
 // ============================================================
 
-// Listen for keyboard presses.
-document.addEventListener("keydown", (event) => {
+// Listen for keyboard keys.
+document.addEventListener(
+    "keydown",
+    (event) => {
 
-  // Check if the Escape key was pressed.
-  if (
-    event.key === "Escape" &&
-    !courseModal.classList.contains("hidden")
-  ) {
+        // Check Escape.
+        if (
+            event.key === "Escape" &&
+            !courseModal.classList.contains("hidden")
+        ) {
 
-    // Close the course.
-    closeCourse();
-  }
-});
+            // Close the modal.
+            closeCourse();
+
+        }
+
+    }
+);
 
 
 // ============================================================
 // PLAY / PAUSE
 // ============================================================
 
-// Listen for clicks on the Play button.
-playBtn.addEventListener("click", () => {
+// Play button.
+playBtn.addEventListener(
+    "click",
+    () => {
 
-  // Check whether the video is currently paused.
-  if (courseVideo.paused) {
+        // If video is paused.
+        if (courseVideo.paused) {
 
-    // Start the video.
-    courseVideo.play();
+            // Play video.
+            courseVideo.play();
 
-  } else {
+        } else {
 
-    // Pause the video.
-    courseVideo.pause();
-  }
-});
+            // Otherwise pause it.
+            courseVideo.pause();
 
+        }
 
-// Change the button to Pause when the video starts.
-courseVideo.addEventListener("play", () => {
-
-  // Display the pause symbol.
-  playBtn.textContent = "❚❚";
-});
+    }
+);
 
 
-// Change the button back to Play when the video pauses.
-courseVideo.addEventListener("pause", () => {
+// Change button when video starts.
+courseVideo.addEventListener(
+    "play",
+    () => {
 
-  // Display the play symbol.
-  playBtn.textContent = "▶";
-});
+        playBtn.textContent = "❚❚";
+
+    }
+);
+
+
+// Change button when video pauses.
+courseVideo.addEventListener(
+    "pause",
+    () => {
+
+        playBtn.textContent = "▶";
+
+    }
+);
 
 
 // ============================================================
 // VIDEO PROGRESS
 // ============================================================
 
-// Listen for video progress.
-courseVideo.addEventListener("timeupdate", () => {
+// Update progress while playing.
+courseVideo.addEventListener(
+    "timeupdate",
+    () => {
 
-  // Check that the video has a valid duration.
-  if (courseVideo.duration) {
+        // Check duration.
+        if (courseVideo.duration) {
 
-    // Calculate the progress percentage.
-    progressBar.value =
-      (courseVideo.currentTime / courseVideo.duration) * 100;
+            // Calculate percentage.
+            progressBar.value =
+                (courseVideo.currentTime /
+                    courseVideo.duration) *
+                100;
 
-    // Display the current video time.
-    currentTime.textContent =
-      formatTime(courseVideo.currentTime);
-  }
-});
 
+            // Show current time.
+            currentTime.textContent =
+                formatTime(
+                    courseVideo.currentTime
+                );
+
+        }
+
+    }
+);
+
+
+// ============================================================
+// VIDEO LOADED
+// ============================================================
 
 // When video information loads.
-courseVideo.addEventListener("loadedmetadata", () => {
+courseVideo.addEventListener(
+    "loadedmetadata",
+    () => {
 
-  // Display the total video duration.
-  durationTime.textContent =
-    formatTime(courseVideo.duration);
+        // Hide placeholder.
+        videoPlaceholder.classList.add("hidden");
 
-  // Reset the current time.
-  currentTime.textContent = "00:00";
 
-  // Reset the progress bar.
-  progressBar.value = 0;
-});
+        // Show duration.
+        durationTime.textContent =
+            formatTime(
+                courseVideo.duration
+            );
+
+
+        // Reset current time.
+        currentTime.textContent =
+            "00:00";
+
+
+        // Reset progress.
+        progressBar.value = 0;
+
+    }
+);
+
+
+// ============================================================
+// VIDEO ERROR
+// ============================================================
+
+// If video fails to load.
+courseVideo.addEventListener(
+    "error",
+    () => {
+
+        // Show placeholder.
+        videoPlaceholder.classList.remove("hidden");
+
+    }
+);
 
 
 // ============================================================
 // PROGRESS BAR
 // ============================================================
 
-// Listen when the user moves the progress bar.
-progressBar.addEventListener("input", () => {
+// When progress bar moves.
+progressBar.addEventListener(
+    "input",
+    () => {
 
-  // Make sure the video has a duration.
-  if (courseVideo.duration) {
+        // Check duration.
+        if (courseVideo.duration) {
 
-    // Convert the percentage into a video time.
-    courseVideo.currentTime =
-      (Number(progressBar.value) / 100) *
-      courseVideo.duration;
-  }
-});
+            // Change video position.
+            courseVideo.currentTime =
+                (Number(progressBar.value) /
+                    100) *
+                courseVideo.duration;
+
+        }
+
+    }
+);
 
 
 // ============================================================
 // VOLUME
 // ============================================================
 
-// Listen for volume changes.
-volumeBar.addEventListener("input", () => {
+// Change volume.
+volumeBar.addEventListener(
+    "input",
+    () => {
 
-  // Change the video volume.
-  courseVideo.volume =
-    Number(volumeBar.value);
-});
+        // Set video volume.
+        courseVideo.volume =
+            Number(volumeBar.value);
+
+    }
+);
 
 
 // ============================================================
 // PLAYBACK SPEED
 // ============================================================
 
-// Listen when the user changes playback speed.
-speedSelect.addEventListener("change", () => {
+// Change playback speed.
+speedSelect.addEventListener(
+    "change",
+    () => {
 
-  // Change the video playback speed.
-  courseVideo.playbackRate =
-    Number(speedSelect.value);
-});
+        // Set video speed.
+        courseVideo.playbackRate =
+            Number(speedSelect.value);
+
+    }
+);
 
 
 // ============================================================
 // FULLSCREEN
 // ============================================================
 
-// Listen for fullscreen button clicks.
-fullscreenBtn.addEventListener("click", async () => {
+// Fullscreen button.
+fullscreenBtn.addEventListener(
+    "click",
+    async () => {
 
-  // Try to enter fullscreen safely.
-  try {
+        // Try fullscreen.
+        try {
 
-    // Check whether the browser supports requestFullscreen.
-    if (courseVideo.requestFullscreen) {
+            // Use browser fullscreen.
+            if (
+                courseVideo.requestFullscreen
+            ) {
 
-      // Enter fullscreen.
-      await courseVideo.requestFullscreen();
+                await courseVideo.requestFullscreen();
 
-    // Check for Safari's fullscreen method.
-    } else if (courseVideo.webkitEnterFullscreen) {
+            }
 
-      // Enter fullscreen on Safari.
-      courseVideo.webkitEnterFullscreen();
+        } catch (error) {
+
+            // Show error in console.
+            console.log(
+                "Fullscreen unavailable.",
+                error
+            );
+
+        }
+
     }
-
-  } catch (error) {
-
-    // Print an error in the browser console if fullscreen fails.
-    console.log(
-      "Fullscreen is not available.",
-      error
-    );
-  }
-});
+);
 
 
 // ============================================================
 // PREVIOUS LESSON
 // ============================================================
 
-// Listen for the Previous button.
-previousBtn.addEventListener("click", () => {
+// Previous button.
+previousBtn.addEventListener(
+    "click",
+    () => {
 
-  // Make sure there is a previous course.
-  if (currentCourseIndex > 0) {
+        // Make sure there is a previous course.
+        if (
+            currentCourseIndex > 0
+        ) {
 
-    // Open the previous course.
-    openCourse(currentCourseIndex - 1);
-  }
-});
+            // Open previous course.
+            openCourse(
+                currentCourseIndex - 1
+            );
+
+        }
+
+    }
+);
 
 
 // ============================================================
 // NEXT LESSON
 // ============================================================
 
-// Listen for the Next button.
-nextBtn.addEventListener("click", () => {
+// Next button.
+nextBtn.addEventListener(
+    "click",
+    () => {
 
-  // Make sure there is a next course.
-  if (
-    currentCourseIndex <
-    COURSES.length - 1
-  ) {
+        // Make sure there is another course.
+        if (
+            currentCourseIndex <
+            COURSES.length - 1
+        ) {
 
-    // Open the next course.
-    openCourse(currentCourseIndex + 1);
-  }
-});
+            // Open next course.
+            openCourse(
+                currentCourseIndex + 1
+            );
+
+        }
+
+    }
+);
+
+
+// ============================================================
+// BLOCK RIGHT CLICK ON VIDEO
+// ============================================================
+
+// Prevent normal right-click on video.
+courseVideo.addEventListener(
+    "contextmenu",
+    (event) => {
+
+        // Stop the browser menu.
+        event.preventDefault();
+
+    }
+);
+
+
+// ============================================================
+// EXAM SIMULATOR BUTTON
+// ============================================================
+
+// Check that the button exists.
+if (examSimulatorBtn) {
+
+    // Listen for a click.
+    examSimulatorBtn.addEventListener(
+        "click",
+        () => {
+
+            // Open the exam simulator page.
+            window.location.href =
+                "exam-simulator.html";
+
+        }
+    );
+
+}
+
+
+// ============================================================
+// DEVELOPMENT MODE
+// ============================================================
+
+// If development mode is enabled.
+if (DEVELOPMENT_MODE) {
+
+    // Hide password screen.
+    accessScreen.classList.add("hidden");
+
+
+    // Show main website.
+    mainWebsite.classList.remove("hidden");
+
+
+    // Create grammar courses.
+    renderCourses();
+
+
+    // Create reading questions.
+    renderQuestionSection(
+        READING_QUESTIONS,
+        "readingGrid"
+    );
+
+
+    // Create listening questions.
+    renderQuestionSection(
+        LISTENING_QUESTIONS,
+        "listeningGrid"
+    );
+
+}
