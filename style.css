@@ -1,146 +1,883 @@
-/* =========================
-   Base
-========================= */
-
+/* This line starts the CSS section. */
+:root {
+  /* This line starts the light-mode color variables. */
+  --paper: #F5F6F2;
+  /* This variable controls the main page background. */
+  --ink: #00273a;
+  /* This variable controls the main dark text color. */
+  --ink-soft: #5B645F;
+  /* This variable controls secondary text. */
+  --indigo: #00689b;
+  /* This variable controls the main blue brand color. */
+  --teal: #00689b;
+  /* This variable controls the secondary blue color. */
+  --amber: #00689b;
+  /* This variable controls the accent color. */
+  --line: #DCDFD6;
+  /* This variable controls borders and separators. */
+  --card: #FFFFFF;
+  /* This variable controls card backgrounds. */
+  --danger: #000000;
+  /* This variable controls dark warning text. */
+  --shadow: 0 18px 45px rgba(0, 39, 58, 0.10);
+  /* This variable creates the soft card shadow. */
+  --radius: 22px;
+  /* This variable controls the general corner roundness. */
+}
+/* This line ends the light-mode variables. */
+body.dark {
+  /* This line starts the dark-mode color variables. */
+  --paper: #15181C;
+  /* This variable changes the page background in dark mode. */
+  --ink: #E8EAE4;
+  /* This variable changes the main text in dark mode. */
+  --ink-soft: #9AA39B;
+  /* This variable changes secondary text in dark mode. */
+  --card: #1E2227;
+  /* This variable changes cards to a dark color. */
+  --line: #33383B;
+  /* This variable changes borders to a dark gray. */
+  --indigo: #00689b;
+  /* This variable keeps the main brand blue in dark mode. */
+  --teal: #00689b;
+  /* This variable keeps the secondary blue in dark mode. */
+  --amber: #00689b;
+  /* This variable keeps the accent blue in dark mode. */
+  --danger: #E2897A;
+  /* This variable changes warning text for dark mode. */
+  --shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+  /* This variable makes shadows darker in dark mode. */
+}
+/* This line ends the dark-mode variables. */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  /* This line starts the universal CSS rule. */
+  box-sizing: border-box;
+  /* This line makes width calculations easier and more predictable. */
+  margin: 0;
+  /* This line removes default browser margins. */
+  padding: 0;
+  /* This line removes default browser padding. */
 }
-
+/* This line ends the universal CSS rule. */
 html {
-    scroll-behavior: smooth;
+  /* This line starts the HTML element styling. */
+  scroll-behavior: smooth;
+  /* This line makes scrolling between sections smooth. */
 }
-
+/* This line ends the HTML styling. */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #222;
-    background: #fff;
+  /* This line starts the main body styling. */
+  font-family: "Tajawal", sans-serif;
+  /* This line applies the Tajawal font to the whole website. */
+  background: var(--paper);
+  /* This line uses the current theme background color. */
+  color: var(--ink);
+  /* This line uses the current theme text color. */
+  min-height: 100vh;
+  /* This line makes the page at least as tall as the screen. */
+  transition: background 0.25s ease, color 0.25s ease;
+  /* This line creates a smooth theme transition. */
 }
-
-/* =========================
-   Header
-========================= */
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 20px 40px;
-    border-bottom: 1px solid #ddd;
+/* This line ends the body styling. */
+button,
+input {
+  /* This line starts shared button and input styling. */
+  font: inherit;
+  /* This line makes controls use the website font. */
 }
-
-.header h1 {
-    font-size: 24px;
-}
-
-nav {
-    display: flex;
-    gap: 20px;
-}
-
-nav a {
-    color: #222;
-    text-decoration: none;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* =========================
-   Hero
-========================= */
-
-.hero {
-    min-height: 70vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-    padding: 40px 20px;
-}
-
-.hero h2 {
-    font-size: 48px;
-    margin-bottom: 15px;
-}
-
-.hero p {
-    font-size: 20px;
-    margin-bottom: 25px;
-}
-
-/* =========================
-   Button
-========================= */
-
+/* This line ends shared control styling. */
 button {
-    padding: 12px 24px;
-
-    border: none;
-    border-radius: 6px;
-
-    background: #222;
-    color: white;
-
-    font-size: 16px;
-    cursor: pointer;
+  /* This line starts button styling. */
+  cursor: pointer;
+  /* This line changes the cursor to a pointer over buttons. */
+  border: 0;
+  /* This line removes the default button border. */
 }
-
-button:hover {
-    opacity: 0.8;
+/* This line ends button styling. */
+.hidden {
+  /* This line starts the hidden utility class. */
+  display: none !important;
+  /* This line completely hides elements using this class. */
 }
-
-/* =========================
-   Sections
-========================= */
-
-.section {
-    max-width: 900px;
-    margin: 0 auto;
-
-    padding: 80px 20px;
+/* This line ends the hidden utility class. */
+#accessScreen {
+  /* This line styles the password screen. */
+  position: fixed;
+  /* This line keeps the access screen fixed over the whole page. */
+  inset: 0;
+  /* This line stretches the access screen to all four edges. */
+  z-index: 1000;
+  /* This line puts the access screen above everything else. */
+  display: grid;
+  /* This line uses CSS Grid for easy centering. */
+  place-items: center;
+  /* This line centers the access card horizontally and vertically. */
+  padding: 24px;
+  /* This line adds space around the access card. */
+  background: radial-gradient(circle at top, rgba(0, 104, 155, 0.15), transparent 45%), var(--paper);
+  /* This line creates a subtle professional background. */
 }
-
-.section h2 {
-    margin-bottom: 15px;
+/* This line ends the password screen styling. */
+.access-card {
+  /* This line styles the password card. */
+  width: min(460px, 100%);
+  /* This line limits the card width while keeping it responsive. */
+  background: var(--card);
+  /* This line gives the card the current theme background. */
+  border: 1px solid var(--line);
+  /* This line adds a subtle border. */
+  border-radius: 28px;
+  /* This line rounds the card corners. */
+  padding: 34px;
+  /* This line adds internal space to the card. */
+  box-shadow: var(--shadow);
+  /* This line adds a soft shadow around the card. */
+  text-align: center;
+  /* This line centers the content inside the card. */
 }
-
-/* =========================
-   Footer
-========================= */
-
-.footer {
-    padding: 30px;
-    text-align: center;
-
-    border-top: 1px solid #ddd;
+/* This line ends the access card styling. */
+.brand-mark {
+  /* This line styles the small logo mark. */
+  width: 64px;
+  /* This line sets the logo width. */
+  height: 64px;
+  /* This line sets the logo height. */
+  margin: 0 auto 14px;
+  /* This line centers the logo and adds bottom spacing. */
+  display: grid;
+  /* This line allows the logo letters to be centered. */
+  place-items: center;
+  /* This line centers the letters inside the logo. */
+  border-radius: 18px;
+  /* This line rounds the logo corners. */
+  background: var(--indigo);
+  /* This line gives the logo its blue background. */
+  color: white;
+  /* This line makes the logo letters white. */
+  font-weight: 900;
+  /* This line makes the logo letters bold. */
+  font-size: 22px;
+  /* This line controls the logo letters size. */
 }
-
-/* =========================
-   Mobile
-========================= */
-
-@media (max-width: 600px) {
-
-    .header {
-        flex-direction: column;
-        gap: 15px;
-        padding: 20px;
-    }
-
-    nav {
-        gap: 12px;
-    }
-
-    .hero h2 {
-        font-size: 36px;
-    }
-
+/* This line ends the logo styling. */
+.brand-name {
+  /* This line styles the brand name. */
+  font-size: 17px;
+  /* This line makes the brand name smaller than the main heading. */
+  font-weight: 800;
+  /* This line makes the brand name strong. */
+  color: var(--ink-soft);
+  /* This line gives the brand name a softer color. */
+  margin-bottom: 20px;
+  /* This line adds space below the brand name. */
 }
+/* This line ends the brand name styling. */
+.access-card h1 {
+  /* This line styles the access heading. */
+  font-size: clamp(25px, 5vw, 34px);
+  /* This line makes the heading responsive. */
+  font-weight: 900;
+  /* This line makes the heading very bold. */
+  margin-bottom: 10px;
+  /* This line adds space below the heading. */
+}
+/* This line ends the access heading styling. */
+.access-card p {
+  /* This line styles access-screen paragraphs. */
+  color: var(--ink-soft);
+  /* This line makes paragraph text softer. */
+  line-height: 1.8;
+  /* This line improves Arabic paragraph readability. */
+  margin-bottom: 20px;
+  /* This line adds space below the paragraph. */
+}
+/* This line ends access paragraph styling. */
+.password-input {
+  /* This line styles the password input. */
+  width: 100%;
+  /* This line makes the input fill the card width. */
+  padding: 15px 18px;
+  /* This line adds comfortable input spacing. */
+  border: 1px solid var(--line);
+  /* This line adds a subtle input border. */
+  border-radius: 14px;
+  /* This line rounds the input corners. */
+  outline: none;
+  /* This line removes the default outline. */
+  background: var(--paper);
+  /* This line gives the input the page background color. */
+  color: var(--ink);
+  /* This line sets the input text color. */
+  text-align: center;
+  /* This line centers the four-digit password. */
+  letter-spacing: 8px;
+  /* This line separates password digits visually. */
+  font-size: 22px;
+  /* This line makes password digits easy to read. */
+  margin-bottom: 15px;
+  /* This line adds space below the input. */
+}
+/* This line ends password input styling. */
+.password-input:focus {
+  /* This line styles the password input when selected. */
+  border-color: var(--indigo);
+  /* This line highlights the input with the brand color. */
+  box-shadow: 0 0 0 4px rgba(0, 104, 155, 0.10);
+  /* This line creates a soft focus ring. */
+}
+/* This line ends focused password input styling. */
+.consent {
+  /* This line styles the consent row. */
+  display: flex;
+  /* This line places the checkbox and text beside each other. */
+  align-items: flex-start;
+  /* This line aligns the checkbox with the first line of text. */
+  gap: 10px;
+  /* This line adds space between checkbox and text. */
+  text-align: right;
+  /* This line aligns Arabic consent text to the right. */
+  margin: 14px 0 20px;
+  /* This line adds vertical space around consent. */
+  color: var(--ink-soft);
+  /* This line uses secondary text color. */
+  font-size: 14px;
+  /* This line keeps consent text compact. */
+  line-height: 1.7;
+  /* This line improves readability. */
+}
+/* This line ends consent styling. */
+.consent input {
+  /* This line styles the consent checkbox. */
+  margin-top: 5px;
+  /* This line aligns the checkbox with the text. */
+  accent-color: var(--indigo);
+  /* This line gives the checkbox the brand color. */
+}
+/* This line ends consent checkbox styling. */
+.primary-btn {
+  /* This line styles the main action buttons. */
+  width: 100%;
+  /* This line makes the button fill its container. */
+  padding: 14px 18px;
+  /* This line gives the button comfortable spacing. */
+  border-radius: 14px;
+  /* This line rounds the button corners. */
+  background: var(--indigo);
+  /* This line gives the button the brand blue. */
+  color: white;
+  /* This line makes button text white. */
+  font-weight: 800;
+  /* This line makes button text bold. */
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  /* This line creates a smooth button interaction. */
+}
+/* This line ends primary button styling. */
+.primary-btn:hover {
+  /* This line starts the primary button hover effect. */
+  transform: translateY(-2px);
+  /* This line moves the button slightly upward. */
+  opacity: 0.92;
+  /* This line slightly softens the button on hover. */
+}
+/* This line ends the primary button hover effect. */
+.error-message {
+  /* This line styles the password error message. */
+  color: var(--danger);
+  /* This line gives the error its warning color. */
+  font-size: 14px;
+  /* This line keeps the error compact. */
+  margin-top: 10px;
+  /* This line adds space above the error. */
+  min-height: 20px;
+  /* This line prevents the layout from jumping when the error appears. */
+}
+/* This line ends error styling. */
+#mainWebsite {
+  /* This line styles the actual website container. */
+  min-height: 100vh;
+  /* This line makes the website fill the screen height. */
+}
+/* This line ends main website styling. */
+.topbar {
+  /* This line styles the website top bar. */
+  position: sticky;
+  /* This line keeps the top bar visible while scrolling. */
+  top: 0;
+  /* This line attaches the top bar to the top of the viewport. */
+  z-index: 50;
+  /* This line keeps the top bar above normal content. */
+  display: flex;
+  /* This line places brand and controls in one row. */
+  align-items: center;
+  /* This line vertically centers top bar content. */
+  justify-content: space-between;
+  /* This line separates the brand and controls. */
+  gap: 20px;
+  /* This line adds space between top bar groups. */
+  padding: 14px clamp(18px, 5vw, 60px);
+  /* This line gives the top bar responsive horizontal spacing. */
+  background: color-mix(in srgb, var(--card) 92%, transparent);
+  /* This line gives the top bar a slightly transparent card color. */
+  border-bottom: 1px solid var(--line);
+  /* This line adds a subtle bottom border. */
+  backdrop-filter: blur(12px);
+  /* This line creates a modern glass effect. */
+}
+/* This line ends top bar styling. */
+.small-brand {
+  /* This line styles the smaller website logo area. */
+  display: flex;
+  /* This line places the mark and text beside each other. */
+  align-items: center;
+  /* This line vertically centers the logo and name. */
+  gap: 10px;
+  /* This line adds spacing between the mark and name. */
+}
+/* This line ends small brand styling. */
+.small-brand .brand-mark {
+  /* This line changes the logo size specifically inside the top bar. */
+  width: 42px;
+  /* This line sets the smaller logo width. */
+  height: 42px;
+  /* This line sets the smaller logo height. */
+  margin: 0;
+  /* This line removes the centered-card margin. */
+  border-radius: 13px;
+  /* This line gives the smaller logo softer corners. */
+  font-size: 15px;
+  /* This line makes the logo letters smaller. */
+}
+/* This line ends small top-bar logo styling. */
+.small-brand strong {
+  /* This line styles the smaller Yazeed English name. */
+  font-size: 15px;
+  /* This line keeps the brand name compact. */
+  font-weight: 900;
+  /* This line makes the name bold. */
+}
+/* This line ends small brand name styling. */
+.theme-buttons {
+  /* This line styles the theme controls container. */
+  display: flex;
+  /* This line places the theme buttons in one row. */
+  gap: 8px;
+  /* This line adds spacing between the theme buttons. */
+}
+/* This line ends theme controls styling. */
+.theme-btn {
+  /* This line styles each theme button. */
+  width: 42px;
+  /* This line sets the button width. */
+  height: 42px;
+  /* This line sets the button height. */
+  border-radius: 12px;
+  /* This line rounds the button corners. */
+  background: var(--paper);
+  /* This line gives the button a contrasting background. */
+  color: var(--ink);
+  /* This line sets the button icon color. */
+  border: 1px solid var(--line);
+  /* This line adds a subtle border. */
+  font-size: 18px;
+  /* This line controls the icon size. */
+}
+/* This line ends theme button styling. */
+.hero {
+  /* This line styles the main hero section. */
+  width: min(1180px, calc(100% - 36px));
+  /* This line limits the hero width and keeps side spacing. */
+  margin: 0 auto;
+  /* This line centers the hero section. */
+  padding: 80px 0 45px;
+  /* This line adds top and bottom space to the hero. */
+  text-align: center;
+  /* This line centers hero text. */
+}
+/* This line ends hero styling. */
+.hero .eyebrow {
+  /* This line styles the small hero label. */
+  color: var(--indigo);
+  /* This line uses the brand color. */
+  font-weight: 900;
+  /* This line makes the label bold. */
+  font-size: 14px;
+  /* This line keeps the label compact. */
+  margin-bottom: 12px;
+  /* This line adds space below the label. */
+}
+/* This line ends hero label styling. */
+.hero h2 {
+  /* This line styles the hero heading. */
+  font-size: clamp(34px, 7vw, 62px);
+  /* This line creates a large responsive heading. */
+  font-weight: 900;
+  /* This line makes the heading very bold. */
+  line-height: 1.15;
+  /* This line keeps the heading compact. */
+  margin-bottom: 18px;
+  /* This line adds space below the heading. */
+}
+/* This line ends hero heading styling. */
+.hero p {
+  /* This line styles the hero description. */
+  max-width: 720px;
+  /* This line prevents the paragraph from becoming too wide. */
+  margin: 0 auto;
+  /* This line centers the paragraph. */
+  color: var(--ink-soft);
+  /* This line uses secondary text color. */
+  line-height: 1.9;
+  /* This line improves Arabic readability. */
+  font-size: 17px;
+  /* This line makes the description comfortable to read. */
+}
+/* This line ends hero paragraph styling. */
+.courses-section {
+  /* This line styles the courses section. */
+  width: min(1180px, calc(100% - 36px));
+  /* This line limits the course area width. */
+  margin: 0 auto;
+  /* This line centers the course area. */
+  padding: 25px 0 80px;
+  /* This line adds vertical spacing around the courses. */
+}
+/* This line ends courses section styling. */
+.section-heading {
+  /* This line styles the courses heading row. */
+  display: flex;
+  /* This line allows heading and subtitle to sit in one row. */
+  align-items: end;
+  /* This line aligns the text at the bottom. */
+  justify-content: space-between;
+  /* This line separates the heading from the count. */
+  gap: 20px;
+  /* This line adds space between heading items. */
+  margin-bottom: 22px;
+  /* This line adds space below the heading. */
+}
+/* This line ends section heading styling. */
+.section-heading h3 {
+  /* This line styles the courses title. */
+  font-size: 28px;
+  /* This line controls the title size. */
+  font-weight: 900;
+  /* This line makes the title bold. */
+}
+/* This line ends courses title styling. */
+.section-heading span {
+  /* This line styles the course count. */
+  color: var(--ink-soft);
+  /* This line uses secondary text color. */
+  font-size: 14px;
+  /* This line keeps the count small. */
+}
+/* This line ends course count styling. */
+.course-grid {
+  /* This line creates the course card grid. */
+  display: grid;
+  /* This line enables CSS Grid. */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  /* This line creates two equal columns on larger screens. */
+  gap: 18px;
+  /* This line adds space between cards. */
+}
+/* This line ends course grid styling. */
+.course-card {
+  /* This line styles each course card. */
+  position: relative;
+  /* This line allows internal positioned elements. */
+  overflow: hidden;
+  /* This line keeps decorative content inside rounded corners. */
+  background: var(--card);
+  /* This line gives cards the current theme color. */
+  border: 1px solid var(--line);
+  /* This line adds a subtle card border. */
+  border-radius: var(--radius);
+  /* This line rounds the card corners. */
+  padding: 24px;
+  /* This line adds internal card spacing. */
+  box-shadow: var(--shadow);
+  /* This line adds depth to cards. */
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  /* This line makes card interactions smooth. */
+}
+/* This line ends course card styling. */
+.course-card:hover {
+  /* This line starts the course card hover effect. */
+  transform: translateY(-4px);
+  /* This line moves the card slightly upward. */
+  border-color: rgba(0, 104, 155, 0.35);
+  /* This line highlights the card border. */
+}
+/* This line ends course card hover styling. */
+.course-number {
+  /* This line styles the course number. */
+  width: 42px;
+  /* This line sets the number badge width. */
+  height: 42px;
+  /* This line sets the number badge height. */
+  display: grid;
+  /* This line allows the number to be centered. */
+  place-items: center;
+  /* This line centers the course number. */
+  border-radius: 13px;
+  /* This line rounds the number badge. */
+  background: rgba(0, 104, 155, 0.10);
+  /* This line creates a soft blue badge background. */
+  color: var(--indigo);
+  /* This line colors the number blue. */
+  font-weight: 900;
+  /* This line makes the number bold. */
+  margin-bottom: 18px;
+  /* This line adds space below the badge. */
+}
+/* This line ends course number styling. */
+.course-card h4 {
+  /* This line styles course titles. */
+  font-size: 23px;
+  /* This line sets the title size. */
+  font-weight: 900;
+  /* This line makes course titles bold. */
+  margin-bottom: 9px;
+  /* This line adds space below titles. */
+}
+/* This line ends course title styling. */
+.course-card p {
+  /* This line styles course descriptions. */
+  color: var(--ink-soft);
+  /* This line uses secondary text color. */
+  line-height: 1.8;
+  /* This line improves paragraph readability. */
+  min-height: 58px;
+  /* This line keeps card descriptions aligned. */
+  margin-bottom: 20px;
+  /* This line adds space above the button. */
+}
+/* This line ends course description styling. */
+.course-btn {
+  /* This line styles the course opening button. */
+  width: 100%;
+  /* This line makes the button fill the card width. */
+  padding: 13px 18px;
+  /* This line gives the button comfortable spacing. */
+  border-radius: 13px;
+  /* This line rounds the button corners. */
+  background: var(--ink);
+  /* This line gives the button a dark theme-aware color. */
+  color: var(--card);
+  /* This line gives the button readable contrasting text. */
+  font-weight: 800;
+  /* This line makes the button text bold. */
+}
+/* This line ends course button styling. */
+.modal {
+  /* This line styles the video modal overlay. */
+  position: fixed;
+  /* This line keeps the modal over the entire screen. */
+  inset: 0;
+  /* This line stretches the modal to all viewport edges. */
+  z-index: 500;
+  /* This line places the modal above the website. */
+  display: grid;
+  /* This line uses grid to center the player. */
+  place-items: center;
+  /* This line centers the player. */
+  padding: 20px;
+  /* This line gives the player room around the edges. */
+  background: rgba(0, 0, 0, 0.78);
+  /* This line creates the dark overlay behind the player. */
+}
+/* This line ends modal styling. */
+.player-modal {
+  /* This line styles the modal content container. */
+  width: min(1050px, 100%);
+  /* This line limits the player width. */
+  max-height: 94vh;
+  /* This line prevents the player from becoming taller than the screen. */
+  overflow: auto;
+  /* This line allows scrolling on small screens. */
+  background: var(--card);
+  /* This line gives the modal its theme-aware background. */
+  border: 1px solid var(--line);
+  /* This line adds a subtle border. */
+  border-radius: 22px;
+  /* This line rounds the modal corners. */
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+  /* This line adds strong modal depth. */
+}
+/* This line ends player modal styling. */
+.player-header {
+  /* This line styles the player header. */
+  display: flex;
+  /* This line places title and close button in one row. */
+  align-items: center;
+  /* This line vertically centers the header content. */
+  justify-content: space-between;
+  /* This line separates the title and close button. */
+  gap: 15px;
+  /* This line adds space between header items. */
+  padding: 17px 20px;
+  /* This line adds header spacing. */
+  border-bottom: 1px solid var(--line);
+  /* This line separates the header from the video. */
+}
+/* This line ends player header styling. */
+.player-header h3 {
+  /* This line styles the modal course title. */
+  font-size: 20px;
+  /* This line controls the title size. */
+  font-weight: 900;
+  /* This line makes the title bold. */
+}
+/* This line ends modal title styling. */
+.close-btn {
+  /* This line styles the close button. */
+  width: 42px;
+  /* This line sets the close button width. */
+  height: 42px;
+  /* This line sets the close button height. */
+  border-radius: 12px;
+  /* This line rounds the close button. */
+  background: var(--paper);
+  /* This line gives the close button a contrasting background. */
+  color: var(--ink);
+  /* This line sets the close icon color. */
+  font-size: 20px;
+  /* This line controls the close icon size. */
+}
+/* This line ends close button styling. */
+.video-shell {
+  /* This line styles the video area. */
+  position: relative;
+  /* This line allows controls to be positioned over the video. */
+  background: #000;
+  /* This line gives the video area a black background. */
+  aspect-ratio: 16 / 9;
+  /* This line keeps the video in a standard widescreen shape. */
+}
+/* This line ends video shell styling. */
+#courseVideo {
+  /* This line styles the actual video element. */
+  width: 100%;
+  /* This line makes the video fill the player width. */
+  height: 100%;
+  /* This line makes the video fill the player height. */
+  display: block;
+  /* This line removes unwanted inline spacing. */
+  object-fit: contain;
+  /* This line keeps the entire video visible. */
+  background: #000;
+  /* This line keeps unused video space black. */
+}
+/* This line ends video styling. */
+.video-placeholder {
+  /* This line styles the message shown when no video file is available. */
+  position: absolute;
+  /* This line positions the message over the video. */
+  inset: 0;
+  /* This line fills the video area. */
+  display: grid;
+  /* This line allows easy centering. */
+  place-items: center;
+  /* This line centers the placeholder message. */
+  padding: 30px;
+  /* This line adds space around the message. */
+  text-align: center;
+  /* This line centers the placeholder text. */
+  color: white;
+  /* This line makes placeholder text white. */
+  background: linear-gradient(135deg, rgba(0, 104, 155, 0.35), rgba(0, 0, 0, 0.7));
+  /* This line creates a professional placeholder background. */
+}
+/* This line ends video placeholder styling. */
+.video-placeholder strong {
+  /* This line styles the placeholder heading. */
+  display: block;
+  /* This line places the heading on its own line. */
+  font-size: 22px;
+  /* This line makes the heading visible. */
+  margin-bottom: 8px;
+  /* This line adds space below the heading. */
+}
+/* This line ends placeholder heading styling. */
+.controls {
+  /* This line styles the video controls bar. */
+  display: grid;
+  /* This line uses grid for the control layout. */
+  grid-template-columns: auto auto 1fr auto auto auto;
+  /* This line creates spaces for play, time, progress, volume, speed, and fullscreen. */
+  align-items: center;
+  /* This line vertically centers all controls. */
+  gap: 10px;
+  /* This line adds space between controls. */
+  padding: 10px 12px;
+  /* This line adds internal control spacing. */
+  background: #090b0d;
+  /* This line gives controls a dark player-style background. */
+  color: white;
+  /* This line makes control text white. */
+}
+/* This line ends controls styling. */
+.control-btn {
+  /* This line styles individual player buttons. */
+  width: 38px;
+  /* This line sets player button width. */
+  height: 38px;
+  /* This line sets player button height. */
+  border-radius: 10px;
+  /* This line rounds player buttons. */
+  background: rgba(255, 255, 255, 0.10);
+  /* This line gives player buttons a subtle background. */
+  color: white;
+  /* This line makes player icons white. */
+}
+/* This line ends player button styling. */
+.control-btn:hover {
+  /* This line starts player button hover styling. */
+  background: rgba(255, 255, 255, 0.20);
+  /* This line brightens buttons when hovered. */
+}
+/* This line ends player button hover styling. */
+.progress {
+  /* This line styles the video progress slider. */
+  width: 100%;
+  /* This line makes the progress bar fill available space. */
+  accent-color: var(--indigo);
+  /* This line uses the brand blue for progress. */
+}
+/* This line ends progress styling. */
+.volume {
+  /* This line styles the volume slider. */
+  width: 80px;
+  /* This line controls volume slider width. */
+  accent-color: var(--indigo);
+  /* This line uses the brand blue for volume. */
+}
+/* This line ends volume styling. */
+.speed-select {
+  /* This line styles the playback speed selector. */
+  background: #15181c;
+  /* This line gives the selector a dark background. */
+  color: white;
+  /* This line makes the selector text white. */
+  border: 1px solid #33383b;
+  /* This line adds a subtle selector border. */
+  border-radius: 9px;
+  /* This line rounds the selector. */
+  padding: 8px;
+  /* This line adds internal selector spacing. */
+}
+/* This line ends speed selector styling. */
+.time-label {
+  /* This line styles the video time display. */
+  direction: ltr;
+  /* This line makes time values read naturally from left to right. */
+  font-size: 13px;
+  /* This line keeps time text compact. */
+  white-space: nowrap;
+  /* This line prevents the time from wrapping. */
+}
+/* This line ends time label styling. */
+.lesson-info {
+  /* This line styles the information under the video. */
+  padding: 22px;
+  /* This line adds internal spacing. */
+}
+/* This line ends lesson information styling. */
+.lesson-info h4 {
+  /* This line styles the lesson information heading. */
+  font-size: 24px;
+  /* This line controls lesson title size. */
+  font-weight: 900;
+  /* This line makes the lesson title bold. */
+  margin-bottom: 8px;
+  /* This line adds space below the lesson title. */
+}
+/* This line ends lesson title styling. */
+.lesson-info p {
+  /* This line styles the lesson description. */
+  color: var(--ink-soft);
+  /* This line uses secondary text color. */
+  line-height: 1.9;
+  /* This line improves paragraph readability. */
+  margin-bottom: 18px;
+  /* This line adds space before navigation buttons. */
+}
+/* This line ends lesson description styling. */
+.lesson-actions {
+  /* This line styles the lesson navigation buttons. */
+  display: flex;
+  /* This line places navigation buttons in one row. */
+  gap: 10px;
+  /* This line adds space between navigation buttons. */
+}
+/* This line ends lesson action styling. */
+.lesson-actions button {
+  /* This line styles lesson action buttons. */
+  flex: 1;
+  /* This line makes both action buttons share the available width. */
+  padding: 12px 15px;
+  /* This line adds button spacing. */
+  border-radius: 12px;
+  /* This line rounds the buttons. */
+  background: var(--paper);
+  /* This line gives secondary buttons a theme-aware background. */
+  color: var(--ink);
+  /* This line sets readable button text. */
+  border: 1px solid var(--line);
+  /* This line adds a subtle border. */
+  font-weight: 800;
+  /* This line makes navigation text bold. */
+}
+/* This line ends lesson action button styling. */
+.lesson-actions .next {
+  /* This line styles the next lesson button. */
+  background: var(--indigo);
+  /* This line gives the next button the brand blue. */
+  color: white;
+  /* This line makes next button text white. */
+  border-color: var(--indigo);
+  /* This line matches the border to the background. */
+}
+/* This line ends next button styling. */
+@media (max-width: 760px) {
+  /* This line starts responsive rules for smaller screens. */
+  .course-grid {
+    /* This line targets the course grid on smaller screens. */
+    grid-template-columns: 1fr;
+    /* This line changes courses to one column. */
+  }
+  /* This line ends the mobile course grid rule. */
+  .topbar {
+    /* This line targets the top bar on smaller screens. */
+    padding-inline: 16px;
+    /* This line reduces top bar side padding. */
+  }
+  /* This line ends mobile top bar padding. */
+  .hero {
+    /* This line targets the hero on smaller screens. */
+    padding-top: 55px;
+    /* This line reduces hero top spacing. */
+  }
+  /* This line ends mobile hero spacing. */
+  .controls {
+    /* This line targets player controls on smaller screens. */
+    grid-template-columns: auto auto 1fr auto;
+    /* This line simplifies the player control layout. */
+  }
+  /* This line ends mobile player grid styling. */
+  .volume,
+  .speed-select {
+    /* This line targets volume and speed controls on smaller screens. */
+    display: none;
+    /* This line hides less-important controls to save space. */
+  }
+  /* This line ends mobile secondary control styling. */
+  .lesson-actions {
+    /* This line targets lesson buttons on smaller screens. */
+    flex-direction: column;
+    /* This line stacks lesson buttons vertically. */
+  }
+  /* This line ends mobile lesson button styling. */
+}
+/* This line ends the responsive media query. */
