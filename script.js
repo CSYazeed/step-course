@@ -1599,7 +1599,7 @@ if (examSimulatorBtn) {
         () => {
 
             window.location.href =
-                "https://yazeedenglish.com";
+                "https://step.yazeedenglish.com";
 
         }
     );
