@@ -7,6 +7,85 @@ const DEVELOPMENT_MODE = true;
 
 
 // ============================================================
+// NEW COURSE SECTION
+// ============================================================
+
+const VOCABULARY_LESSONS = [
+
+    {
+        title: "Lesson 01",
+        description:
+            "وصف الدرس الأول.",
+        video: "videos/grammar.mp4"
+    },
+
+    {
+        title: "Lesson 02",
+        description:
+            "وصف الدرس الثاني.",
+        video: "videos/lesson-02.mp4"
+    },
+
+    {
+        title: "Lesson 03",
+        description:
+            "وصف الدرس الثالث.",
+        video: "videos/lesson-03.mp4"
+    },
+
+    {
+        title: "Lesson 04",
+        description:
+            "وصف الدرس الرابع.",
+        video: "videos/lesson-04.mp4"
+    },
+
+    {
+        title: "Lesson 05",
+        description:
+            "وصف الدرس الخامس.",
+        video: "videos/lesson-05.mp4"
+    },
+
+    {
+        title: "Lesson 06",
+        description:
+            "وصف الدرس السادس.",
+        video: "videos/lesson-06.mp4"
+    },
+
+    {
+        title: "Lesson 07",
+        description:
+            "وصف الدرس السابع.",
+        video: "videos/lesson-07.mp4"
+    },
+
+    {
+        title: "Lesson 08",
+        description:
+            "وصف الدرس الثامن.",
+        video: "videos/lesson-08.mp4"
+    },
+
+    {
+        title: "Lesson 09",
+        description:
+            "وصف الدرس التاسع.",
+        video: "videos/lesson-09.mp4"
+    },
+
+    {
+        title: "Lesson 10",
+        description:
+            "وصف الدرس العاشر.",
+        video: "videos/lesson-10.mp4"
+    }
+
+];
+
+
+// ============================================================
 // GRAMMAR COURSES
 // ============================================================
 
@@ -432,6 +511,89 @@ function renderCourses() {
 
 
 // ============================================================
+// CREATE VOCABULARY LESSONS
+// ============================================================
+
+function renderCoursesForSection(lessons, containerId) {
+
+    const container =
+        document.getElementById(containerId);
+
+    if (!container) {
+        console.error(
+            `Container not found: ${containerId}`
+        );
+        return;
+    }
+
+    container.innerHTML = "";
+
+    lessons.forEach((lesson, index) => {
+
+        const card =
+            document.createElement("article");
+
+        card.className = "course-card";
+
+        card.innerHTML = `
+
+            <div class="course-number">
+                ${String(index + 1).padStart(2, "0")}
+            </div>
+
+            <h4>
+                ${lesson.title}
+            </h4>
+
+            <p>
+                ${lesson.description}
+            </p>
+
+            <button
+                class="course-btn vocabulary-btn"
+                data-vocabulary-index="${index}"
+            >
+                مشاهدة الدرس
+            </button>
+
+        `;
+
+        container.appendChild(card);
+
+    });
+
+
+    const buttons =
+        container.querySelectorAll(
+            ".vocabulary-btn"
+        );
+
+
+    buttons.forEach((button) => {
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                const index =
+                    Number(
+                        button.dataset.vocabularyIndex
+                    );
+
+                openVocabularyLesson(
+                    lessons,
+                    index
+                );
+
+            }
+        );
+
+    });
+
+}
+
+
+// ============================================================
 // CREATE READING / LISTENING CARDS
 // ============================================================
 
@@ -558,6 +720,66 @@ function openCourse(index) {
         "hidden";
 
     updateNavigationButtons();
+
+}
+
+
+// ============================================================
+// OPEN VOCABULARY LESSON
+// ============================================================
+
+function openVocabularyLesson(
+    lessons,
+    index
+) {
+
+    currentQuestionList =
+        lessons;
+
+    currentQuestionIndex =
+        index;
+
+    currentSectionType =
+        "vocabulary";
+
+    const lesson =
+        lessons[index];
+
+    if (!lesson) {
+        console.error(
+            "Vocabulary lesson not found."
+        );
+        return;
+    }
+
+    modalTitle.textContent =
+        lesson.title;
+
+    lessonTitle.textContent =
+        lesson.title;
+
+    lessonDescription.textContent =
+        lesson.description;
+
+    courseVideo.pause();
+
+    courseVideo.src =
+        lesson.video;
+
+    courseVideo.load();
+
+    videoPlaceholder.classList.remove(
+        "hidden"
+    );
+
+    courseModal.classList.remove(
+        "hidden"
+    );
+
+    document.body.style.overflow =
+        "hidden";
+
+    updateQuestionNavigation();
 
 }
 
@@ -1417,5 +1639,11 @@ if (DEVELOPMENT_MODE) {
         "listeningGrid",
         "listening"
     );
+
+    // Create the fifth course section.
+renderCoursesForSection(
+    VOCABULARY_LESSONS,
+    "vocabularyGrid"
+);
 
 }
